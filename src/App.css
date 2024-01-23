@@ -42,5 +42,33 @@ body{
   background-size: cover;
 }
 .App-logo{
-  align-items: first baseline;
+  width: 1366px;
+  height: 628px;
+}
+.headInfo{
+  display: flex;
+  justify-content: center;
+  
+  margin-top: 10px;
+}
+.bodyContent{
+  display: flex;
+
+
+}
+.info{
+  border-radius: 2%;  
+  background-color: rgba(20,23,25, 0.5);
+  width: 600px;
+  height: 450px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.form{
+  background-color: rgba(20,23,25, 0.5);
+  border-radius: 2%;
+  width: 620px;
+  height: 450px;
+  margin-left: 17px;
+  margin-top: 20px;
 }

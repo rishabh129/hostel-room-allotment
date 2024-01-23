@@ -1,16 +1,29 @@
 import logo from './logo-bit.png';
+import { loginFunc } from './login.js'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <img src={logo} alt="logo" />
-        <p>
-          
-        </p>
-        
-      </header>
+      <div className='headInfo'>
+        <img src={logo} alt="logo" />
+      </div>
+      
+      <div className='bodyContent'>
+
+        <div className='info'>
+
+          <h2>Info</h2>
+
+        </div>
+
+        <div className='form'>
+          {loginFunc()}
+        </div>
+
+      </div>
+
+
     </div>
   );
 }
