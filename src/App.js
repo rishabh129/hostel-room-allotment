@@ -1,14 +1,13 @@
-import logo from './logo.svg';
+import logo from './logo-bit.png';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+      <img src={logo} alt="logo" />
         <p>
-          Birla Institute of Technology <br/>
-          Mesra, Ranchi, Jh
+          
         </p>
         
       </header>
