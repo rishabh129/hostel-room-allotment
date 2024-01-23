@@ -57,18 +57,40 @@ body{
 
 }
 .info{
-  border-radius: 2%;  
+  border-radius: 1%;  
   background-color: rgba(20,23,25, 0.5);
   width: 600px;
-  height: 450px;
+  height: 430px;
   margin-left: 20px;
   margin-top: 20px;
+  text-align: left;
+  padding: 10px;
+  color: #FFFFFF;
+}
+.heading{
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+
 }
 .form{
   background-color: rgba(20,23,25, 0.5);
-  border-radius: 2%;
+  border-radius: 1%;
   width: 620px;
   height: 450px;
   margin-left: 17px;
   margin-top: 20px;
+  
+  color: #FFFFFF;
+}
+.info:hover, .form:hover{
+  animation: glow 1s infinite alternate;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgb(75, 75, 133), 0 0 10px rgb(75, 75, 133), 0 0 15px rgb(75, 75, 133);
+  }
+  to {
+    text-shadow: 0 0 10px rgb(75, 75, 133), 0 0 20px rgb(75, 75, 133), 0 0 30px rgb(75, 75, 133);
+  }
 }
