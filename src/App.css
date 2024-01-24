@@ -79,7 +79,7 @@ body{
   text-align: left;
   padding: 10px;
   color: #FFFFFF;
-  margin-right: 20px; /* Margin to the right of div4 */
+  margin-right: 10px; /* Margin to the right of div4 */
   flex: 0 0 65%; /* Takes 65% of the available space */
   border: 1px solid #000;
 }
@@ -94,12 +94,11 @@ body{
   border-radius: 1%;
   width: 620px;
   height: 450px;
-  margin-left: 17px;
   margin-top: 20px;
   
   color: #FFFFFF;
 
-  margin-left: 7px;
+  
   margin-right: 20px; /* Margin to the left of div5 */
   flex-grow: 1; /* Takes the remaining space */
   border: 1px solid #000; 
@@ -118,8 +117,8 @@ body{
 .login{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: 280px;
+  align-items: justify;
+  margin-left: 150px;
   margin-top: 10px;
   padding: 6px 14px;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
@@ -146,3 +145,8 @@ body{
     height: 16px;
     
   }
+  .passforget{
+    color: aliceblue;
+    
+  }
+  

@@ -17,12 +17,13 @@ export function LoginFunc() {
             <br />
             <input type="password" placeholder="Enter Password" id="password" />
           </div>
-
-          <button className="login">Login</button>
+          <div className="loginbutton">
+            <button className="login">Login</button>
+          </div>
         </form>
       </div>
-      <div className="passforget">
-        <a href="/forget.html">Forget password?</a>
+      <div >
+        <a href="/forget.html" className="passforget">Forget password?</a>
       </div>
     </div>
   );
