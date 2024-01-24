@@ -1,5 +1,5 @@
 import logo from './logo-bit.png';
-import { loginFunc } from './login.js'
+import { LoginFunc } from './login.js'
 import './App.css';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         </div>
 
         <div className='form'>
-          {loginFunc()}
+          {LoginFunc()}
         </div>
 
       </div>

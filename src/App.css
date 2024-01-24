@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+.App{
+  height: 20vh; 
+  width: 100vw; 
+  display: flex;
+  flex-direction: column;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -48,13 +60,14 @@ body{
 .headInfo{
   display: flex;
   justify-content: center;
-  
+  height: 20vh; /* 20% of the outerDiv height */
+  width: 100%; /* 100% of the outerDiv width */
   margin-top: 10px;
 }
 .bodyContent{
   display: flex;
-
-
+  flex-grow: 1; /* Takes the remaining space */
+  width: 100%; 
 }
 .info{
   border-radius: 1%;  
@@ -66,6 +79,9 @@ body{
   text-align: left;
   padding: 10px;
   color: #FFFFFF;
+  margin-right: 20px; /* Margin to the right of div4 */
+  flex: 0 0 65%; /* Takes 65% of the available space */
+  border: 1px solid #000;
 }
 .heading{
   text-align: center;
@@ -82,6 +98,11 @@ body{
   margin-top: 20px;
   
   color: #FFFFFF;
+
+  margin-left: 7px;
+  margin-right: 20px; /* Margin to the left of div5 */
+  flex-grow: 1; /* Takes the remaining space */
+  border: 1px solid #000; 
 }
 .info:hover, .form:hover{
   animation: glow 1s infinite alternate;
@@ -94,3 +115,34 @@ body{
     text-shadow: 0 0 10px rgb(75, 75, 133), 0 0 20px rgb(75, 75, 133), 0 0 30px rgb(75, 75, 133);
   }
 }
+.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 280px;
+  margin-top: 10px;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+   background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.login:hover {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;}
+  #username{
+    width: 300px;
+    height: 16px;
+  }
+  #password{
+    width: 300px;
+    height: 16px;
+    
+  }
