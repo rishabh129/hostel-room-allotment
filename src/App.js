@@ -8,6 +8,9 @@ function App() {
       <div className='headInfo'>
         <img src={logo} alt="logo" />
       </div>
+      <div class="background-slider">
+        
+    </div>
       
       <div className='bodyContent'>
 
