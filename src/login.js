@@ -15,15 +15,15 @@ export function LoginFunc() {
         <form action="/server">
           <div className="user">
             <br />
-            <input type="text" id="username" placeholder="Enter Username" />
+            <input type="text" id="username" placeholder="Enter Username" required/>
           </div>
           <div className="pass">
             <br />
             <input
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? "text" : "password" }
               placeholder="Enter password"
               id="password"
-            />
+            required />
             <div className="eye-icon" onClick={togglePasswordVisibility}>
             {showPassword
                 ? "🔓"
