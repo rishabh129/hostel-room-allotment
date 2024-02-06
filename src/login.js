@@ -36,6 +36,7 @@ export function LoginFunc() {
           </div>
         </form>
       </div>
+      <br />
       <div>
         <a href="/forget.html" className="passforget">
           Forget password?
