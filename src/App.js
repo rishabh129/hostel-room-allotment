@@ -1,42 +1,29 @@
-import logo from "./logo-bit.png";
-import { LoginFunc } from "./login.js";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <div className="headInfo">
-        <img src={logo} alt="logo" />
+    <Router>
+      <div>
+      {/* <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+          </ul>
+        </nav> */}
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/dashboard" component={Dashboard} />
+        </Switch>
       </div>
-      <div class="background-slider"></div>
-
-      <div className="bodyContent">
-        <div className="info">
-          <h2 className="heading">Hostel Vision and Mission</h2>
-
-          <h4>Hostel Vision:</h4>
-          <p>
-            To establish a welcoming and nurturing environment within the hostel
-            that aligns seamlessly with the broader goals of the academic
-            institution. Our vision is to create a globally recognized hostel
-            facility that complements the social, academic, and personal growth
-            of its residents.
-          </p>
-
-          <h4>Hostel Mission:</h4>
-          <ol>
-            <li>Conducive and secure living space.</li>
-            <li>Cultivate a sense of community.</li>
-            <li>Contribute to holistic student development.</li>
-            <li>Prioritize safety and well-being.</li>
-            <li>Environmental responsibility.</li>
-          </ol>
-        </div>
-
-        <div className="form">{LoginFunc()}</div>
-      </div>
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;

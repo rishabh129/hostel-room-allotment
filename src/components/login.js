@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { Link } from 'react-router-dom';
 export function LoginFunc() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -41,8 +42,10 @@ export function LoginFunc() {
             <br />
           </div>
           <div className="loginbutton">
+          <Link to="/dashboard">
             <button className="login">Login</button>
-            <button className="signup">Sign Up</button>
+            </Link>
+            
           </div>
         </form>
       </div>
