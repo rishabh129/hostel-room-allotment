@@ -174,11 +174,12 @@ ion-icon {
 
 /* Navbar styles */
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
+    z-index: 1000;
 }
 
 .navbar__background {
@@ -189,6 +190,7 @@ ion-icon {
     height: 100%;
     background-color: hsla(0, 0%, 10%, 0.1);
     filter: blur(3px);
+    z-index: 999;
 }
 
 .navbar__content {

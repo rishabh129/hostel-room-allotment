@@ -39,11 +39,9 @@ const LoginPage = () => {
             <img src={logo} alt="Logo" />
           </div>
           <div className="navbar__brand">BIRLA INSTITUTE OF TECHNOLOGY</div>
-          <div className="navbar__links">
-            <Link to="/dashboard">
-              <button className="nav">Login</button>
-            </Link>
-          </div>
+          {/* <div className="navbar__links">
+            <Link to="/dashboard">Dashboard</Link>
+          </div> */}
         </div>
       </nav>
 
@@ -56,13 +54,13 @@ const LoginPage = () => {
               <div className="login_content_box--input">
                 <input
                   type="email"
-                  placeholder=" "
+                  placeholder="Email"
                   className="login__input email--input"
                   required
                 />
-                <label htmlFor="email" className="login__label">
+                {/* <label htmlFor="email" className="login__label">
                   Email
-                </label>
+                </label> */}
               </div>
             </div>
             <div className="login_content_box">
@@ -70,19 +68,22 @@ const LoginPage = () => {
               <div className="login_content_box--input">
                 <input
                   type={showPassword ? "text" : "password"}
-                  placeholder=" "
+                  placeholder="Password"
                   className="login__input password--input"
                   required
                 />
-                <label htmlFor="password" className="login__label">
+                {/* <label htmlFor="password" className="login__label">
                   Password
-                </label>
-                <ion-icon
-                  className="password__hidden"
-                  id="password__hidden"
-                  name={showPassword ? "eye-outline" : "eye-off-outline"}
-                  onClick={togglePasswordVisibility}
-                ></ion-icon>
+                </label> */}
+                
+            <div className="password__hidden"
+                  id="password__hidden" onClick={togglePasswordVisibility}>
+              {showPassword ? (
+                <i className="fas fa-eye" style={{ color: 'black' }}></i>
+              ) : (
+                <i className="fas fa-eye-slash" style={{ color: 'black' }}></i>
+              )}
+            </div>
               </div>
             </div>
             <div className="remember_login">
@@ -99,7 +100,9 @@ const LoginPage = () => {
                 Forgot password?
               </a>
             </div>
+            <Link to="/dashboard">
             <button className="button__login">Login</button>
+            </Link>
             <p className="register__login text--sm">
               Don't have an account? <a href="#">Register</a>
             </p>
