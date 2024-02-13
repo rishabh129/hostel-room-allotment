@@ -81,6 +81,27 @@ ion-icon{
     color: hsl(0, 0%, 90%);
     letter-spacing: 1px;
 }
+.titleAlign{
+    align-items: baseline;
+    display: flex;
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: hsl(0, 32%, 9%);
+    letter-spacing: 1px;
+}
+.activeSignUp{
+    cursor: pointer;
+    width: 50%;
+    padding-left: 25px;
+}
+.activeSignIn{
+    padding-top: 5px;
+    padding-left: 25px;
+    width: 50%;
+    border: 2px solid #b0bdc9;
+    cursor: pointer;
+}
 
 .login_form_content {
     margin-bottom: 20px;
