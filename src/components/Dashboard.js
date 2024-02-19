@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { database } from './firebase';
 import { useHistory } from 'react-router-dom';
-
+//pushCheck
 const Dashboard = () => {
   const history = useHistory()
   const handleSignOut=()=>{
