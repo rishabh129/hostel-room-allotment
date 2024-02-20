@@ -17,15 +17,14 @@ const Dashboard = () => {
   return (
     <div>
       <nav className="navbar">
-        <div className="navbar__background"></div>
         <div className="navbar__content">
           <div className="navbar__logo">
             <img src={logo} alt="Logo" />
           </div>
           <div className="navbar__brand">BIRLA INSTITUTE OF TECHNOLOGY</div>
           <div class="navbar__links">
-            <button onClick={handleSignOut} className="navbar__link">Sign Out</button>
-
+            <span onClick={handleSignOut} className="navbar__link">Sign Out</span>
+            
           </div>
         </div>
       </nav>

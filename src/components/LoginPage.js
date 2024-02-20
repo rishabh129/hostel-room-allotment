@@ -57,8 +57,8 @@ const LoginPage = () => {
         <form onSubmit={(e)=>handleLogin(e,login?'signin':'signup')} className="login__form">
           {/* <h1 className="title">{login?'Sign In':'Sign Up'}</h1> */}
           <div className="titleAlign">
-          <div className={login==true?'activeSignIn':'activeSignUp'} onClick={()=>setLogin(true)}>Sign In</div>
-          <div className={login==false?'activeSignIn':'activeSignUp'} onClick={()=>setLogin(false)}>Sign Up</div>
+          <div className={login==true?'activeSignIn':'activeSignUp'} onClick={()=>setLogin(true)}>SIGN IN</div>
+          <div className={login==false?'activeSignIn':'activeSignUp'} onClick={()=>setLogin(false)}>SIGN UP</div>
           </div>
           <div className="login_form_content">
             <div className="login_content_box">

@@ -82,7 +82,7 @@ ion-icon{
 .login_form_wrapper {
     z-index: 999;
     position: relative;
-    background-color:rgba(71, 17, 122, 0.59);
+    background-color:hsla(217, 14%, 32%, 0.324);
     border: 2px solid hsl(0, 0%, 90%);
     color: hsla(0, 0%, 100%, 0.897);
     border-radius: 1.5rem;
@@ -113,7 +113,7 @@ ion-icon{
     cursor: pointer;
     width: 50%;
     padding-left: 25px;
-     color: rgba(3, 15, 75, 0.592);
+     color: rgb(190, 54, 24);
        
 
 }
@@ -125,6 +125,7 @@ ion-icon{
     border: 4px solid #b0bdc9;
     border-radius: 10px;
     cursor: pointer;
+    color: rgb(202, 106, 15);
 }
 
 .login_form_content {
@@ -225,6 +226,8 @@ ion-icon {
     width: 100%;
     overflow: hidden;
     z-index: 999;
+    background-color: hsla(216, 22%, 29%, 0.324);
+    
 }
 
 .navbar__background {
@@ -233,7 +236,7 @@ ion-icon {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: hsla(0, 0%, 10%, 0.1);
+    background-color: hsl(243, 83%, 35%);
     filter: blur(3px);
     z-index: 998;
 }
@@ -243,6 +246,7 @@ ion-icon {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    
 }
 
 .navbar__logo img {
@@ -255,9 +259,10 @@ ion-icon {
 
 .navbar__brand {
     font-weight: bold;
-    color: rgb(43, 24, 24);
+    color: rgb(226, 215, 215);
     margin-right: auto;
     margin-left: 5px;
+    letter-spacing: 0.125rem;
 }
 
 .navbar__links {
@@ -267,9 +272,11 @@ ion-icon {
 }
 
 .navbar__link {
-    color: rgb(18, 3, 3);
+    color: rgb(226, 215, 215);
     text-decoration: none;
     cursor: pointer;
+    font-weight: 580;
+    letter-spacing: 0.105rem;
 }
 
 /* Add transparency when scrolled */

@@ -1,6 +1,6 @@
 import logo from "../logo-bit.png";
-import { LoginFunc } from "./login.js";
 import "../App.css";
+import "./styles.css";
 
 function About() {
   return (
@@ -8,8 +8,7 @@ function About() {
       <div className="headInfo">
         <img src={logo} alt="logo" />
       </div>
-      <div class="background-slider"></div>
-
+      
       <div className="bodyContent">
         <div className="info">
           <h2 className="heading">Hostel Vision and Mission</h2>
