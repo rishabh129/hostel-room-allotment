@@ -159,15 +159,8 @@ html, body{
     color: aliceblue;
     
   }
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: url('../public/images/banner.png'); /* Replace 'path/to/your/image.jpg' with the path to your image */
-    background-size: cover; /* Ensures the background image covers the entire background */
-    background-position: center; /* Centers the background image */
-    font-family: Arial, sans-serif; /* Example font-family */
-    color: #333; /* Example text color */
-}
+
+ 
 
 .content {
     padding: 20px; /* Example padding for content */
@@ -185,6 +178,38 @@ html, body{
   display: inline-block;
   font-family: "Font Awesome"; /* Example font family containing the Unicode characters */
 }
+
+/* Add the following CSS animation for the background slideshow */
+
+/* Define the keyframes for the slideshow */
+@keyframes slideshow {
+  0% {
+    background-image: url('/images/bg1.jpg'); /* Change the image path accordingly */
+    transform: scale(1);
+  }
+  25% {
+    background-image: url('/images/bg2.jpg'); /* Change the image path accordingly */
+    transform: scale(1.1); /* Zoom in by 10% */
+  }
+  50% {
+    background-image: url('/images/bg3.jpg'); /* Change the image path accordingly */
+    transform: scale(1.2); /* Zoom in by 20% */
+  }
+  75% {
+    background-image: url('/images/bg4.jpg'); /* Change the image path accordingly */
+    transform: scale(1.1); /* Zoom in by 10% */
+  }
+  100% {
+    background-image: url('/images/bg5.jpg'); /* Change the image path accordingly */
+    transform: scale(1);
+  }
+}
+
+/* Apply the animation to the body element */
+body {
+  animation: slideshow 20s infinite linear; /* Adjust timing and animation function as needed */
+}
+
 
 
   
