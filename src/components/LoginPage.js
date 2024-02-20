@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory, Link, useNavigate } from "react-router-dom";
 import "./styles.css"; // Import CSS file
 import logo from "../images/BIT-logo.png";
+import Navbar from './Navbar';
 import { database } from "./firebase";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 const LoginPage = () => {
@@ -41,7 +42,7 @@ const LoginPage = () => {
 
   return (
     <main className="background_wrapper">
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <div className="navbar__background"></div>
         <div className="navbar__content">
           <div className="navbar__logo">
@@ -49,7 +50,8 @@ const LoginPage = () => {
           </div>
           <div className="navbar__brand">BIRLA INSTITUTE OF TECHNOLOGY</div>
         </div>
-      </nav>
+      </nav> */}
+      {Navbar()}
 
       <div className="login_form_wrapper">
         <form onSubmit={(e)=>handleLogin(e,login?'signin':'signup')} className="login__form">
