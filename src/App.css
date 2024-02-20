@@ -182,28 +182,7 @@ html, body{
 /* Add the following CSS animation for the background slideshow */
 
 /* Define the keyframes for the slideshow */
-@keyframes slideshow {
-  0% {
-    background-image: url('/images/bg1.jpg'); /* Change the image path accordingly */
-    transform: scale(1);
-  }
-  25% {
-    background-image: url('/images/bg2.jpg'); /* Change the image path accordingly */
-    transform: scale(1.1); /* Zoom in by 10% */
-  }
-  50% {
-    background-image: url('/images/bg3.jpg'); /* Change the image path accordingly */
-    transform: scale(1.2); /* Zoom in by 20% */
-  }
-  75% {
-    background-image: url('/images/bg4.jpg'); /* Change the image path accordingly */
-    transform: scale(1.1); /* Zoom in by 10% */
-  }
-  100% {
-    background-image: url('/images/bg5.jpg'); /* Change the image path accordingly */
-    transform: scale(1);
-  }
-}
+/*  */
 
 /* Apply the animation to the body element */
 body {
