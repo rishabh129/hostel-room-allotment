@@ -2,8 +2,21 @@ import React from "react";
 import "./styles.css";
 import logo from "../images/BIT-logo.png";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { database } from "./firebase";
+import { useHistory } from "react-router-dom";
 
-const Navbar = () => {
+
+const Navbar = ({loggedIn}) => {
+
+  const history = useHistory();
+  const handleSignOut = () => {
+    signOut(database).then((val) => {
+      console.log("Logged out! See you later");
+      history.push("/");
+    });
+  };
+
   return (
     <div>
       <nav className="navbar">
@@ -17,9 +30,15 @@ const Navbar = () => {
               About
             </Link>
 
+            {loggedIn == true?
+            (<span onClick={handleSignOut} className="navbar__link">Sign Out</span>
+            ):(
             <Link to="/" className="navbar__link">
-              Sign-In
-            </Link>
+            Sign-In
+          </Link>)
+            }
+
+            
           </div>
         </div>
       </nav>

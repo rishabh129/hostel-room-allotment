@@ -7,7 +7,8 @@ function About() {
   return (
     <div className="App">
       <div className="headInfo">
-      {Navbar()}
+      
+      <Navbar loggedIn={false} />
       </div>
       
       <div className="bodyContent">

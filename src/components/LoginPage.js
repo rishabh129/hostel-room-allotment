@@ -1,4 +1,4 @@
-import React, { useState, CSSProperties } from "react";
+import React, { useState} from "react";
 import { css } from "@emotion/react";
 import { useHistory, Link, useNavigate } from "react-router-dom";
 import "./styles.css"; // Import CSS file
@@ -15,7 +15,7 @@ import {
 const LoginPage = () => {
 
   const [loading, setLoading] = useState(false);
-  
+
   const override = css`
   display: block;
   margin: 0 auto;
@@ -78,14 +78,14 @@ const LoginPage = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+  const isLoggedIn = false;
 
   return (
     <main className="background_wrapper">
-      {Navbar()}
-      {/* {loading?
-              <FadeLoader css={override}/>:<></>
-            } */}
+      {/* {Navbar(loggedIn={isLoggedIn})} */}
 
+      <Navbar loggedIn={false} />
+      
       <div style={overlayStyle}>
         <FadeLoader
           color={"#000000"}
