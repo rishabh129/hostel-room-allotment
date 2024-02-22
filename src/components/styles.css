@@ -82,7 +82,7 @@ ion-icon{
 .login_form_wrapper {
     z-index: 999;
     position: relative;
-    background-color:#070f2b9a;
+    background-color:#03050e9a;
     border: 2px solid hsl(0, 0%, 90%);
     color: hsla(0, 0%, 100%, 0.897);
     border-radius: 1.5rem;
@@ -237,7 +237,7 @@ ion-icon {
     width: 100%;
     overflow: hidden;
     z-index: 999;
-    background-color: #070f2b9a;
+    background-color: #03050e9a;
     
 }
 
