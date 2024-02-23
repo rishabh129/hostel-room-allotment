@@ -308,3 +308,56 @@ ion-icon {
 
 /* slide show */
 
+/* Radio */
+
+.radio-switch {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    
+  }
+  
+  .radio-switch-input {
+    display: none;
+  }
+  
+  .radio-switch-label {
+    position: relative;
+    z-index: 1;
+    margin-right: 0px;
+    padding: 5px 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 20px;
+    cursor: pointer;
+    width: 170px;
+    text-align: center;
+  }
+  
+  
+.radio-switch-input:checked + .radio-switch-label {
+    /* background-color: #007bff; */
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .slide-indicator {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: #007bff;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+  }
+  
+  .radio-switch-input:checked:nth-of-type(1) ~ .slide-indicator {
+    transform: translateX(0%);
+  }
+  
+  .radio-switch-input:checked:nth-of-type(2) ~ .slide-indicator {
+    transform: translateX(100%);
+  }
+  
