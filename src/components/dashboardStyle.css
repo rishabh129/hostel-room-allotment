@@ -1,0 +1,49 @@
+.dashboardBody {
+    background-color: aqua;
+    min-height: 100vh; /* Ensure the background covers at least the viewport height */
+    width: 100vw;
+}
+
+.Container {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Container div{
+    width: 98.8vw;
+}
+
+.menuBar{
+    border: 2px solid black;
+    
+    margin: 70px 8px 0px 8px;
+}
+
+.bodyContent{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0px 8px 5px 8px ;  
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bodyContent div{
+    width: 400px;
+}
+
+.sideMenu, .mainContent, .noticeSection{
+    border: 1px dotted maroon;
+    text-align: center;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.menuItems{
+    padding-left: 20px;
+    padding-top: 10px;
+    text-align: left;
+    
+}

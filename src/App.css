@@ -184,9 +184,7 @@ html, body{
 /*  */
 
 /* Apply the animation to the body element */
-body {
-  animation: slideshow 20s infinite linear; /* Adjust timing and animation function as needed */
-}
+
 
 
 
