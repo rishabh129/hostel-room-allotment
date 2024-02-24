@@ -40,7 +40,14 @@
 
 .mainContent{
     width: 870px;
-    
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContentMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .noticeSection{
@@ -57,10 +64,58 @@
     margin-bottom: 10px;
 }
 
-.applicationFormButton, .trackApplicationButton{
-    background-color: red;
-    margin: 10px;
-    align-self: center;
+.applicationFormButton, .trackApplicationButton, .profileButton{
+    background-color: #090e27ba;
+    margin: 10px 5px 5px 5px;
     width: 250px;
     height: 180px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mainContentDetails{
+    margin: 0px 5px 5px 5px;
+    flex-grow: 1;
+}
+
+.userDetails, .userHostelDetails, .userExtraDetails{
+    background-color: red;
+    height: 43px;
+    display: flex;
+    flex-direction: column;
+    border: 1px  solid black;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.userDetailsApp{
+    display: flex;
+}
+
+.userDetailsApp div{
+    padding: 5px 0px 5px 0px;
+    width: 385px;
+}
+
+.appform{
+    border-right: 1px solid yellow;
+}
+
+.userDetailsHostel{
+    display: flex;
+    border-top: 1.5px solid black;
+}
+.userDetailsHostel div{
+    
+    padding: 3px 5px 1px 5px;
+    width: 256px;
+}
+.hostelNum, .hostelRoomNum{
+    border-right: 1px solid yellow;
+}
+
+.useHostelDetails{
+
 }
