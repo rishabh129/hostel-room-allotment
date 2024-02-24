@@ -9,27 +9,19 @@ const Dashboard = () => {
 
       <div className="Container">
         <div className="menuBar">
-          <h1>Menu Bar</h1>
-          
+          <h1>Menu</h1>
         </div>
+
         <div className="bodyContent">
+          
           <div className="sideMenu">
-            <h2>Side Menu</h2>
-            <ul className="menuItems">
-              <li className="menuItem">Dashboard</li>
-              <li className="menuItem">Profile</li>
-              <li className="menuItem">Application Form</li>
-              <li className="menuItem">Track Application Status</li>
-              <li className="menuItem">Contact</li>
-            </ul>
+            <h1>Side Menu</h1>
           </div>
           <div className="mainContent">
-            <h2>Main Content</h2>
-            
+            <h1>Main Content</h1>
           </div>
           <div className="noticeSection">
-            <h2>Notice Section</h2>
-            
+            <h1>Notice</h1>
           </div>
         </div>
       </div>

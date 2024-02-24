@@ -30,7 +30,7 @@ const Navbar = ({loggedIn}) => {
               About
             </Link>
 
-            {loggedIn == true?
+            {loggedIn?
             (<span onClick={handleSignOut} className="navbar__link">Sign Out</span>
             ):(
             <Link to="/" className="navbar__link">
