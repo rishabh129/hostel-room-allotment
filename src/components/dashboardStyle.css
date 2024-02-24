@@ -1,5 +1,5 @@
 .dashboardBody {
-    background-color: aqua;
+    background-color: rgb(226, 238, 238);
     height: 100vh; /* Ensure the background covers at least the viewport height */
     width: 100vw;
 }
@@ -26,7 +26,7 @@
 }
 
 .sideMenu, .mainContent, .noticeSection{
-    border: 1px dotted maroon;
+    border: 1px solid maroon;
     text-align: center;
     height: 300px;
     padding: 10px 10px 0px 10px;
@@ -36,10 +36,13 @@
 
 .sideMenu{
     width: 250px;
+    height: 100vh;
+    border-radius: 5%;
 }
 
 .mainContent{
-    width: 870px;
+    width: 65vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -52,6 +55,7 @@
 
 .noticeSection{
     width: 300px;
+    height: 100vh;
 }
 
 .menuItems{
@@ -122,3 +126,103 @@
 .useHostelDetails{
 
 }
+
+/* card style */
+
+.containMaincard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mainContentDetails {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -20px 0 0 -20px;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33.33%;
+  padding: 20px 0 0 20px;
+}
+
+.userDetails > * {
+  margin-bottom: 10px;
+}
+
+.card-box {
+  position: relative;
+  color: #fff;
+  padding: 20px 10px 40px;
+  margin: 0 0 20px;
+  background: #00c0ef; /* Default background color */
+}
+
+.card-box:hover {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+.card-box:hover .icon i {
+  font-size: 100px;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+.card-box .inner {
+  padding: 5px 10px 0 10px;
+}
+
+.card-box h3 {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  padding: 0;
+  text-align: left;
+}
+
+.card-box p {
+  font-size: 15px;
+}
+
+.card-box .icon {
+  position: absolute;
+  top: auto;
+  bottom: 5px;
+  right: 5px;
+  z-index: 0;
+  font-size: 72px;
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.card-box .card-box-footer {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  text-align: center;
+  padding: 3px 0;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-decoration: none;
+}
+
+.card-box:hover .card-box-footer {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bg-blue {
+  background-color: #00c0ef !important;
+}
+
+.bg-green {
+  background-color: #00a65a !important;
+}
+
+.bg-orange {
+  background-color: #f39c12 !important;
+}
+
+/* card style */
