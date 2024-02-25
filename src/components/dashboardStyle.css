@@ -1,20 +1,24 @@
 .dashboardBody {
     background-color: rgb(226, 238, 238);
-    height: 100vh; /* Ensure the background covers at least the viewport height */
-    width: 100vw;
+    min-height: 100vh; /* Ensure the background covers at least the viewport height */
+    width: 98.7vw;
 }
 
 .Container {    
     display: flex;
     flex-direction: column;
+    width: 1247px;
 }
 
 
 
 .menuBar{
-    border: 2px solid black;
-    
-    margin: 70px 8px 5px 8px;
+  position: relative;
+  top: 70px;
+  left: 10px;
+    border: 2px solid rgb(233, 66, 66);
+    width: 1247px;
+    /* margin: 70px 0px 5px 8px; */
 }
 
 .bodyContent{
@@ -22,40 +26,38 @@
     border-radius: 10px;
     margin: 5px 8px 5px 8px ;  
     display: flex;
-    width: 98.8vw;
+    height: 470px;
+    width: 70vw;
 }
+
 
 .sideMenu, .mainContent, .noticeSection{
     border: 1px solid maroon;
     text-align: center;
-    height: 300px;
-    padding: 10px 10px 0px 10px;
+    
+    padding: 5px 10px 5px 10px;
     margin: 10px;
-    height: 72vh;
+    height: 75vh;
 }
 
 .sideMenu{
-    width: 250px;
-    height: 100vh;
+    width: 15vw;
     border-radius: 5%;
 }
 
 .mainContent{
-    width: 65vw;
-    height: 100vh;
+    width: 50vw;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
 }
 
 .mainContentMenu{
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .noticeSection{
-    width: 300px;
-    height: 100vh;
+    width: 15vw;
 }
 
 .menuItems{
@@ -67,27 +69,27 @@
 .menuItem{
     margin-bottom: 10px;
 }
-
+/* 
 .applicationFormButton, .trackApplicationButton, .profileButton{
     background-color: #090e27ba;
     margin: 10px 5px 5px 5px;
-    width: 250px;
+    width: 220px;
     height: 180px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
+} */
+/* 
 .mainContentDetails{
     margin: 0px 5px 5px 5px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
+} */
 
-.userDetails, .userHostelDetails, .userExtraDetails{
+/* .userDetails, .userHostelDetails, .userExtraDetails{
     background-color: red;
     height: 43px;
     display: flex;
@@ -95,17 +97,18 @@
     border: 1px  solid black;
     border-radius: 5px;
     /* margin: 10px 0px 10px 0px; */
-}
+/* } */
 
 .userDetailsApp{
     display: flex;
+    justify-content: space-around;
 }
 
 .userDetailsApp div{
     padding: 5px 0px 5px 0px;
     width: 385px;
-}
-
+} */
+/* 
 .appform{
     border-right: 1px solid yellow;
 }
@@ -121,11 +124,7 @@
 }
 .hostelNum, .hostelRoomNum{
     border-right: 1px solid yellow;
-}
-
-.useHostelDetails{
-
-}
+} */
 
 /* card style */
 
@@ -137,9 +136,9 @@
 .mainContentDetails {
   display: flex;
   flex-wrap: wrap;
-  margin: -20px 0 0 -20px;
+  /* margin: -20px 0 0 -20px; */
 }
-
+/* 
 .userDetails {
   display: flex;
   flex-direction: column;
@@ -149,7 +148,7 @@
 
 .userDetails > * {
   margin-bottom: 10px;
-}
+} */
 
 .card-box {
   position: relative;
@@ -171,7 +170,7 @@
 }
 
 .card-box .inner {
-  padding: 5px 10px 0 10px;
+  padding: 5px 10px 0px 10px;
 }
 
 .card-box h3 {
