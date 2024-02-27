@@ -293,6 +293,13 @@ ion-icon {
     letter-spacing: 0.105rem;
 }
 
+.email{
+    cursor: default;
+    width: 300px;
+    text-wrap: wrap;
+    font-size: 14px;
+}
+
 /* Add transparency when scrolled */
 .navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.8);
