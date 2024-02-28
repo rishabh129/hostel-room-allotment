@@ -61,10 +61,10 @@ ion-icon{
     animation: slideshow 10s infinite ease-in-out;
 }
 
-body{
+/* body{
     animation: slideshow 10s infinite ease-in-out;
     background-size: cover;
-}
+} */
 
 @keyframes slideshow {
   0% {

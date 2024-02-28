@@ -1,6 +1,6 @@
 .dashboardBody {
     background-color:rgb(226, 238, 238);
-    height: 104vh;
+    height: 100%;
 }
 
 .Container {    
@@ -27,7 +27,8 @@
 .bodyContent{
     border: 2px solid black;
     border-radius: 10px;
-    margin: 5px 8px 5px 8px ;  
+    /* margin: 5px 8px 5px 8px ;   */
+    margin-top: 10px;
     display: flex;
     height: 80vh;
 
@@ -229,3 +230,20 @@
 }
 
 /* card style */
+
+.menuBar {
+  position: relative;
+  top: 70px;
+  left: 10px;
+  border: 2px solid rgb(233, 66, 66);
+  width: 100%;
+  margin-top: 20px; /* Adjust this value as needed */
+}
+
+.bodyContent {
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  margin-left: 11px;
+  height: 80vh;
+}
