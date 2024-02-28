@@ -35,37 +35,41 @@ nav .animation {
 }
 
 /* Adjusted the hover animation selectors */
+/* Adjusted the hover animation selectors */
 nav .start-home:hover ~ .animation,
 a:nth-child(1):hover ~ .animation {
-	left: 0;
-	width: 220px;
-	background-color: #3498db;
+    left: 0;
+    width: 20%; /* Adjusted width using percentage */
+    background-color: #3498db;
 }
 
 nav .start-about:hover ~ .animation,
 a:nth-child(2):hover ~ .animation {
-	left: calc(27% - 80px);
-	width: 210px;
-	background-color: #3498db;
+    left: 25%; /* Adjusted left position using percentage */
+    width: 20%; /* Adjusted width using percentage */
+    background-color: #3498db;
 }
 
 nav .start-blog:hover ~ .animation,
 a:nth-child(3):hover ~ .animation {
-	left: calc(46% - 50px);
-	width: 180px;
-	background-color: #3498db;
+    left: 50%; /* Adjusted left position using percentage */
+    transform: translateX(-50%); /* Centering animation horizontally */
+    width: 20%; /* Adjusted width using percentage */
+    background-color: #3498db;
 }
 
 nav .start-portefolio:hover ~ .animation,
 a:nth-child(4):hover ~ .animation {
-	left: calc(69% - 75px);
-	width: 170px;
-	background-color: #3498db;
+    left: 75%; /* Adjusted left position using percentage */
+    transform: translateX(-100%); /* Centering animation horizontally */
+    width: 20%; /* Adjusted width using percentage */
+    background-color: #3498db;
 }
+
 nav .start-Contact:hover ~ .animation,
 a:nth-child(5):hover ~ .animation {
-	left: calc(87% - 29px);
-	width: 160px;
-	background-color: #3498db;
+    right: 0; /* Adjusted right position for last item */
+    width: 20%; /* Adjusted width using percentage */
+    background-color: #3498db;
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./MenuBarStyles.css";
 
 const MenuBar = () => {
@@ -14,13 +14,48 @@ const MenuBar = () => {
     //   <button className="menuBarItems">Contact Us</button>
     // </div>
 
+    // <nav className="menuBar">
+    //   <a href="#">Dashboard</a>
+    //   <a href="#">Profile</a>
+    //   <a href="#">Application form</a>
+    //   <a href="#">Application Status</a>
+    //   <a href="#">Contact </a>
+    //   <div class="animation start-home"></div>
+    // </nav>
+
+    // <nav className="menuBar">
+    //   <div>Dashboard</div>
+    //   <div>Profile</div>
+    //   <div>Application Form</div>
+    //   <div>Application Status</div>
+    //   <div>Contact </div>
+    // </nav>
+
     <nav className="menuBar">
-      <a href="#">Dashboard</a>
-      <a href="#">Profile</a>
-      <a href="#">Application form</a>
-      <a href="#">Application Status</a>
-      <a href="#">Contact </a>
-      <div class="animation start-home"></div>
+      <NavLink exact to="/dashboard" activeClassName="active" className="nav-link">
+        Dashboard
+      </NavLink>
+      <NavLink to="/profile" activeClassName="active" className="nav-link">
+        Profile
+      </NavLink>
+      <NavLink
+        to="/application"
+        activeClassName="active"
+        className="nav-link"
+      >
+        Application Form
+      </NavLink>
+      <NavLink
+        to="/application-status"
+        activeClassName="active"
+        className="nav-link"
+      >
+        Application Status
+      </NavLink>
+      <NavLink to="/contact" activeClassName="active" className="nav-link">
+        Contact
+      </NavLink>
+      <div class="slide-menu"></div>
     </nav>
   );
 };
