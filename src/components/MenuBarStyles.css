@@ -1,8 +1,8 @@
 nav {
-	margin: 27px auto 0;
+	margin: 64px auto 0;
 	position: relative;
-	width: 80vw;
-	height: 25vh;
+	width: 98.7vw;
+	height: 10vh;
 	background-color: #34495e;
 	border-radius: 8px;
 	font-size: 0;
@@ -39,14 +39,14 @@ nav .start-home:hover ~ .animation,
 a:nth-child(1):hover ~ .animation {
 	left: 0;
 	width: 220px;
-	background-color: #1abc9c;
+	background-color: #3498db;
 }
 
 nav .start-about:hover ~ .animation,
 a:nth-child(2):hover ~ .animation {
 	left: calc(27% - 80px);
 	width: 210px;
-	background-color: #e74c3c;
+	background-color: #3498db;
 }
 
 nav .start-blog:hover ~ .animation,
@@ -60,12 +60,12 @@ nav .start-portefolio:hover ~ .animation,
 a:nth-child(4):hover ~ .animation {
 	left: calc(69% - 75px);
 	width: 170px;
-	background-color: #9b59b6;
+	background-color: #3498db;
 }
 nav .start-Contact:hover ~ .animation,
 a:nth-child(5):hover ~ .animation {
 	left: calc(87% - 29px);
 	width: 160px;
-	background-color: #9b59b6;
+	background-color: #3498db;
 }
 

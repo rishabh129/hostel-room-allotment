@@ -30,7 +30,7 @@ const Navbar = ({loggedIn}) => {
 
   return (
     <div>
-      <nav className="navbar">
+      <div className="navbar">
         <div className="navbar__content">
           <div className="navbar__logo">
             <img src={logo} alt="Logo" />
@@ -59,7 +59,7 @@ const Navbar = ({loggedIn}) => {
             
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   );
 };
