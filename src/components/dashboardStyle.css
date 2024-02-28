@@ -1,6 +1,6 @@
 .dashboardBody {
     background-color:rgb(226, 238, 238);
-    height: 104vh;
+    height: 100vh;
 }
 
 .Container {    
@@ -27,10 +27,9 @@
 .bodyContent{
     border: 2px solid black;
     border-radius: 10px;
-    margin: 5px 8px 5px 8px ;  
+    margin: 0px 8px 0px 8px ;  
     display: flex;
     height: 80vh;
-
 }
 
 
