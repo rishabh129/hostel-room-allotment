@@ -1,13 +1,12 @@
 .dashboardBody {
-    background-color: rgb(226, 238, 238);
-    min-height: 100vh; /* Ensure the background covers at least the viewport height */
-    width: 98.7vw;
+    background-color:rgb(226, 238, 238);
+    height: 104vh;
 }
 
 .Container {    
     display: flex;
     flex-direction: column;
-    width: 1247px;
+    width: 98.8%;
 }
 
 
@@ -17,7 +16,7 @@
   top: 70px;
   left: 10px;
     border: 2px solid rgb(233, 66, 66);
-    width: 1247px;
+    width: 100%;
     /* margin: 70px 0px 5px 8px; */
 }
 
@@ -33,8 +32,8 @@
     border-radius: 10px;
     margin: 5px 8px 5px 8px ;  
     display: flex;
-    height: 470px;
-    width: 70vw;
+    height: 80vh;
+
 }
 
 
@@ -44,7 +43,6 @@
     
     padding: 5px 10px 5px 10px;
     margin: 10px;
-    height: 75vh;
 }
 
 .sideMenu{
@@ -163,6 +161,7 @@
   padding: 20px 10px 40px;
   margin: 0 0 20px;
   background: #00c0ef; /* Default background color */
+  
 }
 
 .card-box:hover {

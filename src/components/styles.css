@@ -60,6 +60,12 @@ ion-icon{
     z-index: -1;
     animation: slideshow 10s infinite ease-in-out;
 }
+
+body{
+    animation: slideshow 10s infinite ease-in-out;
+    background-size: cover;
+}
+
 @keyframes slideshow {
   0% {
     background-image: url('../images/bg1.jpg'); /* Change the image path accordingly */
