@@ -12,6 +12,18 @@ const MenuBar = () => {
           <button className="menuBarItems">Track Application Status</button>
           <button className="menuBarItems">Contact Us</button>          
         </div>
+        
+
+/* <nav>
+	<a href="#">Dashboard</a>
+	<a href="#">Profile</a>
+	<a href="#">Application form</a>
+	<a href="#">Application Status</a>
+	<a href="#">Contact </a>
+	<div class="animation start-home"></div>
+</nav> */
+
+
     )
 }
 
