@@ -6,12 +6,10 @@ import Navbar from './Navbar';
 function About() {
   return (
     <div className="App">
-      <div className="headInfo">
-      
       <Navbar loggedIn={false} />
-      </div>
       
-      <div className="bodyContent">
+      
+      <div className="bodyContentAbout">
         <div className="info">
           <h2 className="heading">Hostel Vision and Mission</h2>
 

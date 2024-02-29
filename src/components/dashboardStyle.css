@@ -1,8 +1,5 @@
 .dashboardBody {
     background-color:rgb(226, 238, 238);
-
-   
-
     height: 100vh;
 
 }
@@ -10,32 +7,17 @@
 .Container {    
     display: flex;
     flex-direction: column;
-    width: 98.8%;
+    width: 99.4%;
 }
 
-
-/* 
-.menuBar{
+.bodyContent {
+  border: 2px solid black;
   position: relative;
-  top: 70px;
-  left: 10px;
-    border: 2px solid rgb(233, 66, 66);
-    width: 100%;
-    /* margin: 70px 0px 5px 8px; }*/
-/* 
-.menuBarItems{
-  margin: 2px 18px 2px 18px;
-  font-size: 20px;
-  cursor: pointer;}  */
-
-.bodyContent{
-    border: 2px solid black;
-    border-radius: 10px;
-    /* margin: 5px 8px 5px 8px ;   */
-    margin-top: 10px;
-    margin: 0px 8px 0px 8px ;  
-    display: flex;
-    height: 80vh;
+  top: 77px;
+  border-radius: 8px;
+  display: flex;
+  margin-left: 0.25%;
+  height: 76vh;
 }
 
 
@@ -44,7 +26,7 @@
     text-align: center;
     border-radius: 8px;
     
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 0px 10px;
     margin: 10px;
 }
 
@@ -82,35 +64,10 @@
 }
 
 
-.userDetailsApp{
-    display: flex;
-    justify-content: space-around;
-}
-
 .userDetailsApp div{
     padding: 5px 0px 5px 0px;
     width: 385px;
-} */
-/* 
-.appform{
-    border-right: 1px solid yellow;
-}
-
-.userDetailsHostel{
-    display: flex;
-    border-top: 1.5px solid black;
-}
-.userDetailsHostel div{
-    
-    padding: 3px 5px 1px 5px;
-    width: 256px;
-}
-.hostelNum, .hostelRoomNum{
-    border-right: 1px solid yellow;
-} */
-
-/* card style */
-
+} 
 .containMaincard {
   display: flex;
   flex-wrap: wrap;
@@ -121,22 +78,11 @@
   flex-wrap: wrap;
   /* margin: -20px 0 0 -20px; */
 }
-/* 
-.userDetails {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 33.33%;
-  padding: 20px 0 0 20px;
-}
-
-.userDetails > * {
-  margin-bottom: 10px;
-} */
 
 .card-box {
   position: relative;
   color: #fff;
-  padding: 20px 10px 40px;
+  padding: 20px 10px 6vh;
   margin: 0 0 20px;
   background: #00c0ef; /* Default background color */
   
@@ -207,16 +153,4 @@
 
 .bg-orange {
   background-color: #f39c12 !important;
-}
-
-/* card style */
-
-
-.bodyContent {
-  border: 2px solid black;
-  border-radius: 10px;
-  display: flex;
-  margin-left: 11px;
-  
-  height: 80vh;
 }

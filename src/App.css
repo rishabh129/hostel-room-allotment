@@ -9,13 +9,6 @@ body{
   
 }
 
-.App{
-  height: 20vh; 
-  width: 98.7vw; 
-  display: flex;
-  flex-direction: column;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -63,26 +56,26 @@ body{
   width: 100%; /* 100% of the outerDiv width */
   margin-top: 10px;
 }
-.bodyContent{
-  margin-top: 100px;
-  display: flex;
-  flex-grow: 1; /* Takes the remaining space */
-  width: 100%; 
-  background-color:rgb(226, 238, 238);
+.bodyContentAbout{
+  position: relative;
+  top: 90px;
+  left: 8px;
+ 
+  width: 98.7vw; 
+  border: 2px solid black;
+  border-radius: 8px;
 }
 .info{
-  border-radius: 1%;  
-  background-color: #03050e9a;
-  width: 100%;
+  border-radius: 4px;  
+  background-color: #141b3afe;
+  
   height: 74vh;
-  margin: 10px 4px 10px 12px;
+  margin: 10px 8px 10px 8px;
   text-align: left;
   padding-top: 2.8rem;
   padding-left: 3.78rem;
   padding-right: 3.78rem;
   color: #FFFFFF;
-  margin-right: 10px; /* Margin to the right of div4 */
-  flex: 0 0 98%; /* Takes 65% of the available space */
   border: 1px solid #000;
 }
 
