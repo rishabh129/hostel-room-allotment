@@ -68,6 +68,7 @@ body{
   display: flex;
   flex-grow: 1; /* Takes the remaining space */
   width: 100%; 
+  background-color:rgb(226, 238, 238);
 }
 .info{
   border-radius: 1%;  
