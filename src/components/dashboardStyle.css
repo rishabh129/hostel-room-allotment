@@ -1,5 +1,5 @@
 .dashboardBody {
-    background-color:rgb(226, 238, 238);
+    background-color:rgba(62, 208, 224, 0.557);
     height: 100vh;
 
 }
@@ -18,6 +18,8 @@
   display: flex;
   margin-left: 0.25%;
   height: 76vh;
+  
+
 }
 
 
