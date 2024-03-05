@@ -7,19 +7,19 @@ const SideMenu = () => {
             <h1>Side Menu</h1>
             <ul className="menuItems">
               <li className="menuItem">
-                <Link to="/dashboard">Dashboard</Link>
+                <Link className="sideMenulink" to="/dashboard">Dashboard</Link>
               </li>
               <li className="menuItem">
-                <Link to="/dashboard">Profile</Link>
+                <Link  className="sideMenulink" to="/dashboard">Profile</Link>
               </li>
               <li className="menuItem">
-                <Link to="/application">Application Form</Link>
+                <Link className="sideMenulink" to="/application">Application Form</Link>
               </li>
               <li className="menuItem">
-                <Link to="/dashboard">Track Application</Link>
+                <Link className="sideMenulink" to="/dashboard">Track Application</Link>
               </li>
               <li className="menuItem">
-                <Link to="/dashboard">Contact Us</Link>
+                <Link className="sideMenulink" to="/dashboard">Contact Us</Link>
               </li>
             </ul>
           </div>

@@ -35,6 +35,8 @@
 .sideMenu{
     width: 15vw;
     border-radius: 5%;
+    background-color: rgba(47, 83, 149, 0.944);
+   
 }
 
 .mainContent{
@@ -50,6 +52,7 @@
 
 .noticeSection{
     width: 15vw;
+    
     background-color:rgba(47, 83, 149, 0.944) ;
     box-shadow: 2px #00c0ef;
     
@@ -63,6 +66,10 @@
 
 .menuItem{
     margin-bottom: 10px;
+    
+}
+.sideMenu .sideMenulink {
+  color: rgba(255, 255, 255, 0.589);
 }
 
 
