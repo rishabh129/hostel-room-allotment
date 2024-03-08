@@ -103,6 +103,12 @@ margin-left: 1rem;
   padding: 5px;
   
 }
+#photo-upload{
+  margin-left: 7%;
+}
+#fee-slip-upload{
+  margin-left: 6%;
+}
 #photo,#slip,#fee{
   margin-left: 2%;
 }
@@ -115,14 +121,20 @@ margin-left: 1rem;
   border-radius: 5px;
 }
 
-#current-addressl,#permanent-addressl{
+#current-addressl,#permanent-addressl
+{
   margin-left: 2%;
   margin-bottom: 1%;
-
 }
 #permanent-address{
   margin-bottom: 2%;
+  margin-left: 3.4%;
 }
+#current-address{
+  margin-left: 6%;
+  
+}
+
 /* CSS button */
 .button-22 {
   align-items: center;
