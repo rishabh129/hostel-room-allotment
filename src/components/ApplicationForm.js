@@ -42,7 +42,7 @@ const ApplicationForm = () => {
                             <label htmlFor="first-name" id="first-namel">First Name:</label>
                             <input type="text" id="first-name" name="firstName" value={formData.firstName} onChange={handleChange} required />
                             <label htmlFor="middle-name" id="middle-namel">Middle Name:</label>
-                            <input type="text" id="middle-name" name="middleName" value={formData.middleName} onChange={handleChange} required />
+                            <input type="text" id="middle-name" name="middleName" value={formData.middleName} onChange={handleChange}  />
                             <label htmlFor="last-name" id="last-namel">Last Name:</label>
                             <input type="text" id="last-name" name="lastName" value={formData.lastName} onChange={handleChange} required />  <br />
                             <label htmlFor="student-id" id="student-idl">Roll Number:</label>
@@ -84,20 +84,20 @@ const ApplicationForm = () => {
 
                         <fieldset className="contact-information">
                             <legend>Contact Information</legend>
-                            <label htmlFor="permanent-address">Permanent Address:</label>
+                            <label htmlFor="permanent-address" id='permanent-addressl'>Permanent Address:</label>
                             <textarea id="permanent-address" name="permanentAddress" rows="4" cols="50" value={formData.permanentAddress} onChange={handleChange} required></textarea>
                             <br />
-                            <label htmlFor="current-address">Current Address:</label>
+                            <label htmlFor="current-address"id='current-addressl'>Current Address:</label>
                             <textarea id="current-address" name="currentAddress" rows="4" cols="50" value={formData.currentAddress} onChange={handleChange} required></textarea>
                         </fieldset>
 
                         <fieldset className="documents-section">
                             <legend>Document Upload</legend>
-                            <label htmlFor="photo-upload">Photo:</label>
+                            <label htmlFor="photo-upload" id='photo'>Photo:</label>
                             <input type="file" id="photo-upload" name="photoUpload" multiple /> <br />
-                            <label htmlFor="admission-slip-upload">Admission Slip:</label>
+                            <label id='slip' htmlFor="admission-slip-upload">Admission Slip:</label>
                             <input type="file" id="admission-slip-upload" name="admissionSlipUpload" multiple /> <br />
-                            <label htmlFor="fee-slip-upload">Fee Slip:</label>
+                            <label id='fee' htmlFor="fee-slip-upload">Fee Slip:</label>
                             <input type="file" id="fee-slip-upload" name="feeSlipUpload" multiple /><br />
                         </fieldset>
 
