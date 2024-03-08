@@ -2,6 +2,7 @@ import React from "react";
 import "./dashboardStyle.css";
 import Navbar from "./Navbar";
 import MenuBar from "./MenuBar";
+import ApplicationForm from "./ApplicationForm";
 import MainMenu from "./MainMenu";
 
 const ApplicationPage = () => {
@@ -11,7 +12,8 @@ const ApplicationPage = () => {
 
       <div className="Container">
       <MenuBar/>
-      <MainMenu page={"application"}/>        
+      {/* <MainMenu page={"application"}/>         */}
+      <ApplicationForm />
       </div>
     </div>
   );
