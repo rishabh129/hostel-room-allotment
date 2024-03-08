@@ -1,6 +1,6 @@
 .dashboardBody {
-    background-color:rgba(62, 208, 224, 0.557);
-    height: 100vh;
+    /* background-color:rgba(62, 208, 224, 0.557);
+    height: 100%; */
 
 }
 
@@ -163,3 +163,12 @@
 .bg-orange {
   background-color: #f39c12 !important;
 }
+.scrollable-container {
+  height: 500px; /* Adjust the height according to your requirements */
+  overflow-y: auto; /* This will enable vertical scrollbar */
+}
+
+.scrollable-content {
+  /* Additional styles for the content container */
+}
+

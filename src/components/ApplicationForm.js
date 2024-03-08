@@ -33,7 +33,10 @@ const ApplicationForm = () => {
     };
 
     return (
+         <div className="scrollable-container">
+               <div className="scrollable-content">
         <form onSubmit={handleSubmit}>
+           
             <fieldset className="personal-info-section">
                 <legend>Personal Information</legend>
                 <label htmlFor="first-name">First Name:</label>
@@ -98,7 +101,9 @@ const ApplicationForm = () => {
             </fieldset>
 
             <button className="button-22" type="submit">Submit</button>
-        </form>
+           </form>
+         </div>
+      </div>
     );
 };
 
