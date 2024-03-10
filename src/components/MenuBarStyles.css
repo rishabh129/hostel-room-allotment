@@ -1,5 +1,5 @@
 .menuBar {
-	position: relative;
+	position: sticky;
 	top: 70px;
 	border: 2px solid rgb(233, 66, 66);
 	width: 99.7%;
