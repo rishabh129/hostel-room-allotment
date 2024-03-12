@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { css } from "@emotion/react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import "./styles.css"; // Import CSS file
 import { FadeLoader } from "react-spinners";
 import Navbar from "./Navbar";
@@ -10,6 +10,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   sendEmailVerification,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 const LoginPage = () => {
@@ -48,7 +49,6 @@ const LoginPage = () => {
     const password = e.target.password.value;
     const auth = getAuth();
     if (type === "signup") {
-      
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -100,6 +100,20 @@ const LoginPage = () => {
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
+  };
+
+  const handleForgotPassword = () => {
+    setLoading(true);
+    const auth = getAuth(); // Get the authentication instance
+    const emailAddress = email; // Get the user's email address from the input
+    sendPasswordResetEmail(auth, emailAddress)
+      .then(() => {
+        setLoading(false);
+        alert("Password reset email sent!");
+      })
+      .catch((error) => {
+        console.error("Error sending password reset email:", error);
+      });
   };
 
   return (
@@ -247,6 +261,10 @@ const LoginPage = () => {
             <button className="button__login">
               {login ? "Sign-In" : "Sign-Up"}
             </button>
+            {login?
+            <Link to="#" onClick={handleForgotPassword} className="forgotPW">Forgot Password?</Link>
+            :""}
+            
           </div>
         </form>
       </div>

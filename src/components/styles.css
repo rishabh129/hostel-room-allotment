@@ -374,4 +374,10 @@ ion-icon {
   .radio-switch-input:checked:nth-of-type(2) ~ .slide-indicator {
     transform: translateX(100%);
   }
+
+.forgotPW{
+    color: #fff;
+    margin: 0px 0px 0px 220px;
+    line-height: 28px;
+}
   
