@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { css } from "@emotion/react";
-import { useHistory, Link, useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./styles.css"; // Import CSS file
 import { FadeLoader } from "react-spinners";
 import Navbar from "./Navbar";
@@ -9,10 +9,16 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  sendEmailVerification,
 } from "firebase/auth";
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
+  const [login, setLogin] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+  const [error, setError] = useState("");
 
   const override = css`
     display: block;
@@ -34,21 +40,30 @@ const LoginPage = () => {
     alignItems: "center",
   };
 
-  const [login, setLogin] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const history = useHistory();
+  
   const handleLogin = (e, type) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
     const email = e.target.email.value;
     const password = e.target.password.value;
-
-    if (type == "signup") {
-      createUserWithEmailAndPassword(database, email, password)
-        .then((data) => {
-          console.log("Account Created! Welcome, ", email);
-          history.push("/dashboard");
+    const auth = getAuth();
+    if (type === "signup") {
+      
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        // Send email verification
+        sendEmailVerification(auth.currentUser)
+        .then(() => {
+          alert("Verification email sent!");
+          setLogin(true);
+        })
+        .catch((error) => {
+          console.error("Error sending verification email:", error);
+        });
+        
+        console.log("Account Created! Welcome, ", email);
+          // history.push("/dashboard");
           setLoading(false);
         })
         .catch((err) => {
@@ -57,11 +72,16 @@ const LoginPage = () => {
           setLogin(true);
         });
     } else {
-      signInWithEmailAndPassword(database, email, password)
-        .then((data) => {
-          console.log("Logged in successfully! Hello, ", email);
-          history.push("/dashboard");
-          setLoading(false);
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          if (user.emailVerified) {
+            console.log("Logged in successfully! Hello, ", email);
+            history.push("/dashboard");
+          } else {
+            setLoading(false);
+            alert("Please verify your email to log in.");
+          }
         })
         .catch((err) => {
           setLoading(false);
