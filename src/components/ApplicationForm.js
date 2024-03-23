@@ -63,23 +63,50 @@ const ApplicationForm = () => {
 {/* academic section */}
                         <fieldset className="academic-info-section">
                             <legend>Academic Information</legend>
+                            <div className="wrapper">
+                                Select Program:
+                                <input type="radio" id="ug" name="program" value="UG" checked={formData.program === 'UG'} onChange={handleChange} />
+                                <label htmlFor="ug">UG</label>
+                                <input type="radio" id="pg" name="program" value="PG" checked={formData.program === 'PG'} onChange={handleChange} />
+                                <label htmlFor="pg">PG</label><br />
+                            </div>
+
+                            <label htmlFor="department" id='departmentl'>Department:</label>
+
+                            <select name="department" id="department" value={formData.department} onChange={handleChange} required>
+                              <option value="arch">Architechture and Planning</option>
+                              <option value="bio">Bioengineering and Biotechnology</option>
+                              <option value="chemical">Chemical Engineering</option>
+                              <option value="food">Center for Food Engineering and Technology</option>
+                              <option value="chemistry">Chemistry</option>
+                              <option value="civil">Civil and ENV Engineering</option>
+                              <option value="cs">Computer Science and Engineering</option>
+                              <option value="ds">Centre for Quantitative Analysis and Data Science</option>
+                              <option value="eee">Electrical and Electronic Engineering</option>
+                              <option value="ece">Electronics and Communication Engineering</option>
+                              <option value="hmct">Hotel Management and Catering Technology</option>
+                              <option value="humanities">Humanities and Social Sciences</option>
+                              <option value="management">Management</option>
+                              <option value="math">Mathematics</option>
+                              <option value="mech">Mechanical Engineering</option>
+                              <option value="pharma">Pharmaceutical Sciences and Technology</option>
+                              <option value="physics">Physics</option>
+                              <option value="prod">Production and Industrial Engineering</option>
+                              <option value="rs">Remote Sensing</option>
+                              <option value="rocketry">Space Engineering and Rocketry</option>
+
+                            </select> <br />
+
                             <label htmlFor="current-course" id="current-coursel">Current Course:</label>
                             <input type="text" id="current-course" name="currentCourse" value={formData.currentCourse} onChange={handleChange} required /><br />
                             <label htmlFor="start-year" id='start-yearl'>Start of Course Year:</label>
                             <input type="number" id="start-year" name="startYear" value={formData.startYear} onChange={handleChange} required /><br />
                             <label htmlFor="end-year" id='end-yearl'>End of Course Year:</label>
                             <input type="number" id="end-year" name="endYear" value={formData.endYear} onChange={handleChange} required /><br />
-                            <label htmlFor="department" id='departmentl'>Department:</label>
-                            <input type="text" id="department" name="department" value={formData.department} onChange={handleChange} required /><br />
+                            
                             <label htmlFor="duration" id='durationl'>Duration of Course:</label>
                             <input type="text" id="duration" name="duration" value={formData.duration} onChange={handleChange} /><br />
-                            <div className="wrapper">
-                                Select one Program:
-                                <input type="radio" id="ug" name="program" value="UG" checked={formData.program === 'UG'} onChange={handleChange} />
-                                <label htmlFor="ug">UG</label>
-                                <input type="radio" id="pg" name="program" value="PG" checked={formData.program === 'PG'} onChange={handleChange} />
-                                <label htmlFor="pg">PG</label><br />
-                            </div>
+                            
                         </fieldset>
 
                         <fieldset className="contact-information">

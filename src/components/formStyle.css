@@ -11,7 +11,7 @@
   border-radius: 8px;
   font-size: 1.125rem;
 }
-#first-name,#middle-name,#last-name{
+#first-name,#middle-name,#last-name{ 
   margin-top: 2%;
   margin-bottom: 2%;
   border:solid black 1px;
@@ -39,7 +39,7 @@ margin-left: 1rem;
   border:solid black 1px;
   border-radius: 5px;
   padding-left: 4px;
-  height: 22px;
+  height: 23px;
 }
 #contact-email{
   margin-left: 5.7%;
@@ -51,7 +51,7 @@ margin-left: 1rem;
   margin-left: 10%;
 }
 #dobl{
-  margin-left: 21%;
+  margin-left: 15%;
 }
 
 /* Academic information section */
@@ -90,6 +90,11 @@ margin-left: 1rem;
  }
  #department{
   margin-left: 6.5%;
+ }
+
+ #gender{
+  width: 150px;
+  height: 23px;
  }
 
 
