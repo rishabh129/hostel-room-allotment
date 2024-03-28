@@ -1,9 +1,11 @@
 import React from 'react';
-import './profile.css'; // Import CSS file
-
+import './profile.css';
+import Navbar from './Navbar';
+import MenuBar from './MenuBar';
 function Profile() {
     return (
-        <div className="main">
+        
+    <div className="main">
             <div className="sidemenu">
                 <UpperInfo />
                 <LowerInfo />

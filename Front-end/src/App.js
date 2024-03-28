@@ -5,6 +5,7 @@ import { database } from './components/firebase'; // Import your Firebase auth m
 import LoginPage from './components/LoginPage';
 import About from './components/About';
 import ApplicationPage from './components/ApplicationPage';
+import Profile from './components/profile'; 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -16,11 +17,14 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Switch>
+        <Switch>``
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route path="/about" component={About} /> 
           <Route path="/application" component={ApplicationPage} />
+          <Route path="/profile" component={Profile} />
+          
           <Route path="/" component={LoginPage} />
+          
           
                              
         </Switch>
