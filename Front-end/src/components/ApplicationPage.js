@@ -9,7 +9,6 @@ const ApplicationPage = () => {
   return (
     <div className="dashboardBody">
       <Navbar loggedIn={true} />
-
       <div className="Container">
       <MenuBar/>
       {/* <MainMenu page={"application"}/>         */}
