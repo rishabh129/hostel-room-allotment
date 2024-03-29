@@ -11,7 +11,6 @@ const ApplicationPage = () => {
       <Navbar loggedIn={true} />
       <div className="Container">
       <MenuBar/>
-      {/* <MainMenu page={"application"}/>         */}
       <ApplicationForm />
       </div>
     </div>

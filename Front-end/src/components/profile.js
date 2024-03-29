@@ -1,24 +1,33 @@
 import React from "react";
 import "./profile.css";
+import "./dashboardStyle.css";
 import Navbar from "./Navbar";
 import MenuBar from "./MenuBar";
-function Profile() {
+
+const ProfilePage = () => {
   return (
-    <div className="main">
+    <div className="dashboardBody">
       <Navbar loggedIn={true} />
       <div className="Container">
         <MenuBar />
-        {/* <MainMenu page={"application"}/>         */}
-        <div className="sidemenu">
-          <UpperInfo />
-          <LowerInfo />
+        <Profile />
+      </div>
+    </div>
+  );
+};
+
+function Profile() {
+  return (
+    <div className="main">
+      <div className="sidemenu">
+        <UpperInfo />
+        <LowerInfo />
+      </div>
+      <div className="maincontent">
+        <div className="welcome">
+          <p>Welcome back! You are logged in as: <em>Dr. K. S. Patnaik</em></p>
         </div>
-        <div className="maincontent">
-          <div className="welcome">
-            Welcome back! You are logged in as: Name Here
-          </div>
-          <ProfileTable />
-        </div>
+        <ProfileTable />
       </div>
     </div>
   );
@@ -82,4 +91,4 @@ function ProfileTable() {
   );
 }
 
-export default Profile;
+export default ProfilePage;

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 75px 0px 10px 10px;
 }
 
 .sidemenu {
@@ -9,12 +10,13 @@
     width: 20vw;
     display: flex;
     flex-direction: column;
+    z-index: -1;
 }
 
 .upperinfo {
     height: 30%;
-    padding: 1rem 0;
-    margin: 5px 5px;
+    /* padding: 1rem 0; */
+    margin: 0px 5px 5px 5px;
     box-shadow: 0 7px 7px #67C6E3;
     border-radius: 3%;
     transition: box-shadow 0.3s ease;
@@ -22,6 +24,7 @@
     position: relative;
     overflow: hidden;
     background-color: #DFF5FF;
+    padding-top: 0;
 }
 
 .upperinfo img {
@@ -51,7 +54,7 @@
 .lowerinfo {
     height: 70%;
     padding: 1rem 0;
-    margin: 5px 5px;
+    margin: 5px 5px 0px 5px;
     box-shadow: 0 6px 6px #67C6E3;
     border-radius: 3%;
     transition: box-shadow 0.3s ease;
@@ -67,12 +70,14 @@
 }
 
 .maincontent {
-    border-radius: 3px;
+    padding: 1rem 0;
+    border-radius: 5px;
     width: 80vw;
     height: 90vh;
     margin: 5px 5px;
     box-shadow: 0 7px 7px #67C6E3;
     background-color: #DFF5FF;
+    
 }
 
 
