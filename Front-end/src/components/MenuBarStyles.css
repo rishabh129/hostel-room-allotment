@@ -55,25 +55,4 @@ nav .animation {
 	height: 9.4vh;
   }
   
- .dropdown-content {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  background-color: #34495e;
-  border: 2px solid rgb(233, 66, 66);
-  border-radius: 8px;
-  top: 100%;
-  left: 0;
-  width: 200px;
-}
-
-.dropdown-link {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  text-align: center;
-}
-
-.dropdown-link:hover {
-  background-color: #3498db;
-}
+ 
