@@ -6,6 +6,7 @@ import LoginPage from './components/LoginPage';
 import About from './components/About';
 import ApplicationPage from './components/ApplicationPage';
 import Profile from './components/profile'; 
+import SwapRoomApplication from './components/SwapRoomApplication';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/about" component={About} /> 
           <Route path="/application" component={ApplicationPage} />
           <Route path="/profile" component={Profile} />
+          <Route path="/swapRoomApplication" component={SwapRoomApplication} />
           
           <Route path="/" component={LoginPage} />
           

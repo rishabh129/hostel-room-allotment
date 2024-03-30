@@ -14,7 +14,7 @@ const MenuBar = () => {
         Profile
       </NavLink>
       <NavLink
-        to="/application"
+        to="/swapRoomApplication"
         activeClassName="active"
         className="nav-link"
       >
