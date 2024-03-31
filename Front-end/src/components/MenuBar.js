@@ -27,9 +27,10 @@ const MenuBar = () => {
       >
         Application Status
       </NavLink>
-      <NavLink to="/contact" activeClassName="active" className="nav-link">
+      <NavLink to="/contactus" activeClassName="active" className="nav-link">
         Contact
       </NavLink>
+     
       <div class="slide-menu"></div>
     </nav>
   );
