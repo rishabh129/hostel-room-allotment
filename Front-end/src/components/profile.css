@@ -1,136 +1,148 @@
 .main {
-  margin-top: 70px;
-  margin-left: 5px;
-  display: flex;
-  margin-bottom: 10px;
-  justify-content: space-between;
-  align-items: center;
+    margin-top: 70px;
+    margin-left: 5px;
+    display: flex;
+    margin-bottom: 10px;
+   
+    justify-content: space-between; /* This will align the child elements in a row with equal space between them */
+    align-items: center; /* This will vertically center the child elements */
 }
-
-.sidemenu {
-  height: 90vh;
-  width: 20vw;
-  display: flex;
-  flex-direction: column;
+.sidemenu{
+    height: 90vh ;
+    width: 20vw;
+   
+    
+    display: flex; /* Add display flex to align child elements properly */
+    flex-direction: column; /* Stack child elements vertically */
 }
 
 .upperinfo {
-  height: 30%;
-  padding: 1rem 0;
-  margin: 5px 5px;
-  box-shadow: 0 7px 7px #67C6E3;
-  border-radius: 3%;
-  transition: box-shadow 0.3s ease;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-color: #DFF5FF;
-  z-index: -1;
+    height: 30%;
+    padding: 1rem 0;
+    margin: 5px 5px;
+    box-shadow: 0 7px 7px #67C6E3;
+    border-radius: 3%;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Remove the scrollbar by hiding overflow */
+    background-color: #DFF5FF;
+    z-index: -1;
 }
-
+/* image alignment */
 .upperinfo img {
-  border-radius: 50%;
-  max-width: 100%;
-  max-height: 150px;
-  margin-bottom: 10px;
-  transition: box-shadow 0.3s;
+    border-radius: 50%;
+    max-width: 100%; /* Ensure image does not exceed container width */
+    max-height: 150px; /* Set maximum height for the image */
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
 }
-
 .upperinfo h3 {
-  max-width: 80%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+    max-width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 auto; /* Center the text horizontally */
+    position: absolute; /* Position the h3 element */
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust horizontally to center */
 }
 
-.upperinfo:hover,
-.lowerinfo:hover,
-.personal-info:hover,
-.academic-info:hover,
-.contact-info:hover {
-  box-shadow: 0 0 10px 5px #378CE7;
+ 
+
+
+
+.upperinfo img:hover {
+    box-shadow: 0 0 20px #378CE7; /* Apply glow effect on hover */
 }
 
 .lowerinfo {
-  height: 70%;
-  padding: 1rem 0;
-  margin: 5px 5px;
-  box-shadow: 0 6px 6px #67C6E3;
-  border-radius: 3%;
-  transition: box-shadow 0.3s ease;
-  background-color: #DFF5FF;
+    height: 70%;
+    
+    /* border: 2px solid black; */
+    padding: 1rem 0; /* Add some padding to the top and bottom of .lowerinfo */
+    margin: 5px 5px;
+    box-shadow: 0 6px 6px #67C6E3;
+    border-radius: 3%;
+    transition: box-shadow 0.3s ease;
+    background-color: #DFF5FF;
 }
-
-.maincontent {
-  border-radius: 3px;
-  width: 80vw;
-  height: 90vh;
-  margin: 5px 5px;
-  box-shadow: 0 7px 7px #67C6E3;
-  background-color: #DFF5FF;
+.upperinfo:hover,
+.lowerinfo:hover,.personal-info:hover,.academic-info:hover,.contact-info:hover {
+  box-shadow: 0 0 10px 5px #378CE7; /* Glow effect on hover */
 }
-
+.maincontent{
+   border-radius: 3px;
+    width: 80vw;
+    height:90vh;
+    margin: 5px 5px;
+ box-shadow: 0 7px 7px #67C6E3;
+background-color: #DFF5FF;
+}
+/* Table styling */
 .table {
-  margin-top: 10%;
+margin-top: 10%;
+  border: 1px solid black;
+  border-radius: 5px;
   border-collapse: collapse;
-  width: 94%;
+  width: 94%; /* Adjusted width to accommodate the margin */
   border-radius: 2%;
   margin: 3% auto;
+  /* Added auto to center the table horizontally */
 }
 
-.table th,
-.table td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: left;
+
+.table th, .table td {
+  border: 1px solid black; 
+   border-radius: ;/* Border style */
+  padding: 8px; /* Padding */
+  text-align: left; /* Text alignment */
+  
 }
 
+/* Top row styling */
 #profile_row {
-  background-color: #5356FF;
-  color: white;
+  background-color: #5356FF; /* Background color */
+  color: white; /* Text color */
 }
-
 .lowerinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 10px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start of the container */
+    padding: 10px; /* Add padding for spacing */
 }
 
 .info-item {
-  display: flex;
-  margin-bottom: 10px;
+    display: flex;
+    margin-bottom: 10px; /* Add margin between items */
 }
 
 .label {
-  font-weight: bold;
-  width: 120px;
+    font-weight: bold;
+    width: 120px; /* Fixed width for labels */
 }
 
 .value {
-  margin-left: 10px;
+    margin-left: 10px; /* Add margin between label and value */
 }
-
-.personal-legend,
-.academic-legend,
-.contact-legend {
-  padding: 2px 4px;
-  border-radius: 6px;
-  font-size: 20px;
-  background-color: #3498db;
+ 
+/* main content info section */
+.personal-legend, .academic-legend,.contact-legend{
+    padding: 2px 4px;
+  
+    border-radius: 6px;
+    font-size: 20px;
+    background-color: #3498db;
+    
 }
-
-.personal-info,
-.academic-info,
-.contact-info {
-  border-radius: 10px;
-  border: solid 1px rgba(8, 109, 191, 0.616);
-  margin-bottom: 2%;
-  box-shadow: 0 2px 4px rgba(13, 130, 225, 0.55);
-  padding: 5px 10px;
+.personal-info,.academic-info,.contact-info{
+    border-radius: 10px;
+    border: solid 1px rgba(8, 109, 191, 0.616);
+    margin-bottom: 2%;
+    border-radius: 5px; /* Adjust the border-radius value as needed */
+    box-shadow: 0 2px 4px rgba(13, 130, 225, 0.55); /* Adjust the box-shadow values as needed */
+    padding: 5px 10px; 
+    background-color: #DFF5FF;
 }
