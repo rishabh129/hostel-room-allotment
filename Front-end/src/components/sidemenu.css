@@ -7,7 +7,7 @@
 
     margin-bottom: 20px;
     height: 40%;
-    background-color: #C2D9FF;
+    background-color: #67C6E3;
     border-radius: 10px;
     padding: 3%;
   }
@@ -19,7 +19,7 @@
   border-radius: 50%; /* Set border-radius to 50% for perfect roundness */
   overflow: hidden;
   margin: 0 auto 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.913); /* Box shadow */
   transition: transform 0.3s ease-in-out; /* Transition for animation */
   
 }
@@ -53,9 +53,9 @@
   .academic-info {
     padding: 20px;
     height: 54%;
-    background-color: #C2D9FF;
+    background-color: #67C6E3;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.978);
     margin-top: 10px;
   }
   
@@ -67,4 +67,23 @@
   }
   .academic-info p {
   margin-top: 5%; /* adjust the value as needed */
+}
+.sideMenu{
+  background-color: hsla(243, 83%, 35%, 0.786);
+  border: 1px solid black;
+}
+.sideMenu {
+  background-color: hsla(243, 83%, 35%, 0.786);
+  border: 1px solid black;
+  animation: glow-animation 1s infinite alternate; /* Apply the glow animation */
+  border-radius: 10px; /* Adjust the border-radius as needed */
+}
+
+@keyframes glow-animation {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Initial glow effect */
+  }
+  100% {
+    box-shadow: 0 0 20px rgb(2, 24, 85); /* Final glow effect */
+  }
 }

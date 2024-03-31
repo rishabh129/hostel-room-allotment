@@ -53,15 +53,17 @@
 .noticeSection{
     width: 15vw;
     
-    background-color:rgba(47, 83, 149, 0.944) ;
+    background-color: hsla(243, 83%, 35%, 0.786);
     box-shadow: 2px #00c0ef;
-    
+    color: #201e1e;
 }
+
 
 .menuItems{
     padding-left: 20px;
     margin-top: 10px;
     text-align: left;
+    color: #f1f1f1;
 }
 
 .menuItem{
@@ -164,3 +166,8 @@
   background-color: #f39c12 !important;
 }
 
+.menuItem>a{
+  color: #080808;
+  font-size: 15px;
+
+}
