@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useFirebase } from './firebase';
 import "./formStyle.css";
 
-const ApplicationForm = () => {
+const NewApplication = () => {
+  const firebase = useFirebase();
   const [formData, setFormData] = useState({
     firstName: "",
     middleName: "",
@@ -19,17 +21,59 @@ const ApplicationForm = () => {
     program: "UG",
     permanentAddress: "",
     currentAddress: "",
+    userPhoto: "",
+    admissionSlip: "",
+    feeReceipt: ""
   });
+
+  const resetFormData = () => {
+    setFormData({
+      firstName: "",
+      middleName: "",
+      lastName: "",
+      studentId: "",
+      contactEmail: "",
+      contactPhone: "",
+      gender: "male",
+      dob: "",
+      currentCourse: "",
+      startYear: "",
+      endYear: "",
+      department: "",
+      duration: "",
+      program: "UG",
+      permanentAddress: "",
+      currentAddress: "",
+      userPhoto: "",
+      admissionSlip: "",
+      feeReceipt: ""
+    });
+  };
+  
+  const photoInputRef = useRef(null);
+  const admissionSlipInputRef = useRef(null);
+  const feeReceiptInputRef = useRef(null);
+
+  const resetFileInputs = () => {
+    photoInputRef.current.value = "";
+    admissionSlipInputRef.current.value = "";
+    feeReceiptInputRef.current.value = "";
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission here, you can send formData to your server or perform any other action
-    console.log(formData);
+    
+    await firebase.handleApplicationSubmit(formData);
+    console.log("Form Submitted Successfully!");
+    alert("Application Submitted!");
+    resetFormData();
+    resetFileInputs();
   };
 
     return (
@@ -121,11 +165,11 @@ const ApplicationForm = () => {
                         <fieldset className="documents-section">
                             <legend>Document Upload</legend>
                             <label htmlFor="photo-upload" id='photo'>Photo:</label>
-                            <input type="file" id="photo-upload" name="photoUpload" multiple /> <br />
+                            <input type="file" id="photo-upload" name="userPhoto" multiple /> <br />
                             <label id='slip' htmlFor="admission-slip-upload">Admission Slip:</label>
-                            <input type="file" id="admission-slip-upload" name="admissionSlipUpload" multiple /> <br />
+                            <input type="file" id="admission-slip-upload" name="admissionSlip" multiple /> <br />
                             <label id='fee' htmlFor="fee-slip-upload">Fee Slip:</label>
-                            <input type="file" id="fee-slip-upload" name="feeSlipUpload" multiple /><br />
+                            <input type="file" id="fee-slip-upload" name="feeReceipt" multiple /><br />
                         </fieldset>
 
             <button className="button-22" type="submit">
@@ -138,4 +182,4 @@ const ApplicationForm = () => {
   );
 };
 
-export default ApplicationForm;
+export default NewApplication;

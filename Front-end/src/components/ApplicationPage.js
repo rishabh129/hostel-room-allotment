@@ -2,7 +2,7 @@ import React from "react";
 import "./dashboardStyle.css";
 import Navbar from "./Navbar";
 import MenuBar from "./MenuBar";
-import ApplicationForm from "./ApplicationForm";
+import NewApplication from "./NewApplication";
 import MainMenu from "./MainMenu";
 
 const ApplicationPage = () => {
@@ -11,7 +11,7 @@ const ApplicationPage = () => {
       <Navbar loggedIn={true} />
       <div className="Container">
       <MenuBar/>
-      <ApplicationForm />
+      <NewApplication />
       </div>
     </div>
   );

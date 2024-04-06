@@ -2,7 +2,7 @@ import React from "react";
 import SideMenu from "./SideMenu";
 import StudentDashboard from "./StudentDashboard";
 import NoticeSection from "./NoticeSection";
-import ApplicationForm from "./ApplicationForm";
+import NewApplication from "./NewApplication";
 
 const MainMenu = ({page}) => {
     return(
@@ -14,7 +14,7 @@ const MainMenu = ({page}) => {
           ):""
           }
           {page == "application"?(
-            <ApplicationForm />
+            <NewApplication />
           ):""
           }
 

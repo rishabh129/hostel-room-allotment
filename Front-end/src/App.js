@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Switch>``
+        <Switch>
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route path="/about" component={About} /> 
           <Route path="/application" component={ApplicationPage} />
