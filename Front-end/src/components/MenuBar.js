@@ -31,7 +31,7 @@ const MenuBar = () => {
         Contact
       </NavLink>
      
-      <div class="slide-menu"></div>
+      <div className="slide-menu"></div>
     </nav>
   );
 };

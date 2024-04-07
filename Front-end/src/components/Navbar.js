@@ -36,11 +36,11 @@ const Navbar = ({loggedIn}) => {
             <img src={logo} alt="Logo" />
           </div>
           <div className="navbar__brand">BIRLA INSTITUTE OF TECHNOLOGY</div>
-          <div class="navbar__links">
+          <div className="navbar__links">
             
           {loggedIn?
             (
-            <span className="navbar__link email">{user ? "Welcome "+ user.email : ""}</span>
+            <span className="navbar__link email">{user ? "Welcome, "+ user.displayName : ""}</span>
             ):""}
             
             <Link to="/about" className="navbar__link">

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef   } from "react";
 import { useFirebase } from './firebase';
 import "./formStyle.css";
 
@@ -11,7 +11,7 @@ const NewApplication = () => {
     studentId: "",
     contactEmail: "",
     contactPhone: "",
-    gender: "male",
+    gender: "Male",
     dob: "",
     currentCourse: "",
     startYear: "",
@@ -21,10 +21,14 @@ const NewApplication = () => {
     program: "UG",
     permanentAddress: "",
     currentAddress: "",
-    userPhoto: "",
-    admissionSlip: "",
-    feeReceipt: ""
+    // userPhoto: "",
+    // admissionSlip: "",
+    // feeReceipt: ""
   });
+
+  const [userPhoto, setUserPhoto] = useState("")
+  const [admissionSlip, setAdmissionSlip] = useState("")
+  const [feeReceipt, setFeeReceipt] = useState("")
 
   const resetFormData = () => {
     setFormData({
@@ -34,7 +38,7 @@ const NewApplication = () => {
       studentId: "",
       contactEmail: "",
       contactPhone: "",
-      gender: "male",
+      gender: "Male",
       dob: "",
       currentCourse: "",
       startYear: "",
@@ -44,9 +48,7 @@ const NewApplication = () => {
       program: "UG",
       permanentAddress: "",
       currentAddress: "",
-      userPhoto: "",
-      admissionSlip: "",
-      feeReceipt: ""
+      
     });
   };
   
@@ -69,11 +71,10 @@ const NewApplication = () => {
     e.preventDefault();
     // Handle form submission here, you can send formData to your server or perform any other action
     
-    await firebase.handleApplicationSubmit(formData);
+    await firebase.handleNewRoomApplicationSubmit(formData, userPhoto, admissionSlip, feeReceipt);
     console.log("Form Submitted Successfully!");
     alert("Application Submitted!");
     resetFormData();
-    resetFileInputs();
   };
 
     return (
@@ -97,9 +98,9 @@ const NewApplication = () => {
                             <input type="tel" id="contact-phone" name="contactPhone" value={formData.contactPhone} onChange={handleChange} />
                             <label htmlFor="gender" id='genderl'>Gender:</label>
                             <select id="gender" name="gender" value={formData.gender} onChange={handleChange} required><br />
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
                             </select>
                             <label htmlFor="dob" id='dobl'>Date of Birth:</label>
                             <input type="date" id="dob" name="dob" value={formData.dob} onChange={handleChange} required />
@@ -165,11 +166,11 @@ const NewApplication = () => {
                         <fieldset className="documents-section">
                             <legend>Document Upload</legend>
                             <label htmlFor="photo-upload" id='photo'>Photo:</label>
-                            <input type="file" id="photo-upload" name="userPhoto" multiple /> <br />
+                            <input type="file" id="photo-upload" name="userPhoto" onChange={(e) => setUserPhoto(e.target.files[0])} /> <br />
                             <label id='slip' htmlFor="admission-slip-upload">Admission Slip:</label>
-                            <input type="file" id="admission-slip-upload" name="admissionSlip" multiple /> <br />
+                            <input type="file" id="admission-slip-upload" name="admissionSlip" onChange={(e) => setAdmissionSlip(e.target.files[0])}/> <br />
                             <label id='fee' htmlFor="fee-slip-upload">Fee Slip:</label>
-                            <input type="file" id="fee-slip-upload" name="feeReceipt" multiple /><br />
+                            <input type="file" id="fee-slip-upload" name="feeReceipt" onChange={(e) => setFeeReceipt(e.target.files[0])}/><br />
                         </fieldset>
 
             <button className="button-22" type="submit">

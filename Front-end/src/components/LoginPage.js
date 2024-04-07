@@ -11,6 +11,7 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
   sendPasswordResetEmail,
+  updateProfile,
 } from "firebase/auth";
 
 const LoginPage = () => {
@@ -18,6 +19,7 @@ const LoginPage = () => {
   const [login, setLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const history = useHistory();
   const [error, setError] = useState("");
 
@@ -42,16 +44,18 @@ const LoginPage = () => {
   };
 
   
-  const handleLogin = (e, type) => {
+  const handleLogin = async (e, type) => {
     e.preventDefault();
     setLoading(true);
     const email = e.target.email.value;
     const password = e.target.password.value;
     const auth = getAuth();
     if (type === "signup") {
-      createUserWithEmailAndPassword(auth, email, password)
+      
+      await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        
         // Send email verification
         sendEmailVerification(auth.currentUser)
         .then(() => {
@@ -71,6 +75,11 @@ const LoginPage = () => {
           alert(err.code);
           setLogin(true);
         });
+
+        await updateProfile(auth.currentUser, {
+          displayName: name
+        });
+
     } else {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -158,8 +167,8 @@ const LoginPage = () => {
                     type="text"
                     placeholder="Full Name"
                     className="login__input name--input"
-                    // value={name}
-                    // onChange={(e) => setEmail(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required
                   />
                 </div>
@@ -253,7 +262,7 @@ const LoginPage = () => {
                     className="radio-switch-input"
                   />
                   <label htmlFor="radio2" className="radio-switch-label">Admin</label>
-                  <div class="slide-indicator"></div>
+                  <div className="slide-indicator"></div>
                 </div>
               </div>
             ) : null}

@@ -41,28 +41,28 @@ export { database };
 
 
 export const FirebaseProvider = (props) => {
-  const handleApplicationSubmit = async (formData) => {
-    console.log(formData);
+  const handleNewRoomApplicationSubmit = async (formData, userPhoto, admissionSlip, feeReceipt) => {
+    // console.log(formData);
     const imageRef = ref(
       storage,
-      `uploads/userImage/${Date.now()}-${formData.studentId}`
+      `uploads/userImage/${Date.now()}-${formData.firstName}-${formData.lastName}}`
     );
-    const uploadPhoto = await uploadBytes(imageRef, formData.userPhoto);
+    const uploadPhoto = await uploadBytes(imageRef, userPhoto);
     
     const admissionRef = ref(
       storage,
-      `uploads/admissionSlip/${Date.now()}-${formData.studentId}`
+      `uploads/admissionSlip/${Date.now()}-${formData.firstName}-${formData.lastName}`
     );
-    const uploadAdmSlip = await uploadBytes(admissionRef, formData.admissionSlip);
+    const uploadAdmSlip = await uploadBytes(admissionRef, admissionSlip);
     
     const feeRef = ref(
       storage,
-      `uploads/feeReceipt/${Date.now()}-${formData.studentId}`
+      `uploads/feeReceipt/${Date.now()}-${formData.firstName}-${formData.lastName}`
     );
-    const uploadFeeReceipt = await uploadBytes(feeRef, formData.feeReceipt);
+    const uploadFeeReceipt = await uploadBytes(feeRef, feeReceipt); 
     
     
-    return await addDoc(collection(firestore, "applications"), {
+    await addDoc(collection(firestore, "newroom"), {
       firstName: formData.firstName,
       middleName: formData.middleName,
       lastName: formData.lastName,
@@ -83,11 +83,47 @@ export const FirebaseProvider = (props) => {
       admissionSlip: uploadAdmSlip.ref.fullPath,
       feeReceipt: uploadFeeReceipt.ref.fullPath,
     });
+
+    await addDoc(collection(firestore, "student"), {
+      firstName: formData.firstName,
+      middleName: formData.middleName,
+      lastName: formData.lastName,
+      studentId: formData.studentId,
+      contactEmail: formData.contactEmail,
+      contactPhone: formData.contactPhone,
+      gender: formData.gender,
+      dob: formData.dob,
+      currentCourse: formData.currentCourse,
+      startYear: formData.startYear,
+      endYear: formData.endYear,
+      department: formData.department,
+      duration: formData.duration,
+      program: formData.program,
+      permanentAddress: formData.permanentAddress,
+      currentAddress: formData.currentAddress,
+      userPhoto: uploadPhoto.ref.fullPath,
+    });
+    return;
   };
+
+  const getStudentProfileData = async (email) => {
+    const collectionRef = collection(firestore, "student");
+    const q = query(collectionRef, where("contactEmail", "==", email));
+
+    const result = await getDocs(q);
+    return result;
+  };
+
+  const getProfileImage = (path) =>{
+    return getDownloadURL(ref(storage, path));
+  };
+
   return (
     <FirebaseContext.Provider
       value={{
-        handleApplicationSubmit,
+        handleNewRoomApplicationSubmit,
+        getStudentProfileData,
+        getProfileImage,
       }}
     >
       {props.children}

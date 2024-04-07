@@ -8,7 +8,7 @@
     align-items: center; /* This will vertically center the child elements */
 }
 .sidemenu{
-    height: 90vh ;
+    height: 75vh ;
     width: 20vw;
    
     
@@ -17,7 +17,7 @@
 }
 
 .upperinfo {
-    height: 30%;
+    height: 40%;
     padding: 1rem 0;
     margin: 5px 5px;
     box-shadow: 0 7px 7px #67C6E3;
@@ -31,9 +31,9 @@
 }
 /* image alignment */
 .upperinfo img {
-    border-radius: 50%;
+    border-radius: 12%;
     max-width: 100%; /* Ensure image does not exceed container width */
-    max-height: 150px; /* Set maximum height for the image */
+    max-height: 170px; /* Set maximum height for the image */
     margin-bottom: 10px;
     transition: box-shadow 0.3s;
 }
@@ -58,7 +58,7 @@
 }
 
 .lowerinfo {
-    height: 70%;
+    height: 55%;
     
     /* border: 2px solid black; */
     padding: 1rem 0; /* Add some padding to the top and bottom of .lowerinfo */
