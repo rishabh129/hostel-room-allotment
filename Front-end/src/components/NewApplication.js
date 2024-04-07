@@ -21,10 +21,7 @@ const NewApplication = () => {
     program: "UG",
     permanentAddress: "",
     currentAddress: "",
-    // userPhoto: "",
-    // admissionSlip: "",
-    // feeReceipt: ""
-  });
+    });
 
   const [userPhoto, setUserPhoto] = useState("")
   const [admissionSlip, setAdmissionSlip] = useState("")

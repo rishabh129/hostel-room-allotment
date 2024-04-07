@@ -25,11 +25,20 @@ const SideMenu = () => {
 
   useEffect(() => {
     if (user) {
-      //console.log(user.email);
-      firebase.getStudentProfileData(user.email).then((student) => {
-        setStudent(student.docs[0].data());
-        
-      });
+      firebase.getStudentProfileData(user.email)
+        .then((snapshot) => {
+          if (!snapshot.empty) {
+            // Check if the snapshot contains any documents
+            setStudent(snapshot.docs[0].data());
+          } else {
+            // Handle the case where no documents are found
+            console.log("No student profile data found for the user.");
+          }
+        })
+        .catch((error) => {
+          // Handle any errors that occur during data retrieval
+          console.error("Error getting student profile data:", error);
+        });
     }
   }, [user]);
   

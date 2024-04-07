@@ -115,7 +115,12 @@ export const FirebaseProvider = (props) => {
   };
 
   const getProfileImage = (path) =>{
+    console.log(path);
     return getDownloadURL(ref(storage, path));
+  };
+
+  const getDefaultProfileImage = () =>{
+    return getDownloadURL(ref(storage, "uploads/userImage/defaultUserImage"));
   };
 
   return (
@@ -124,6 +129,7 @@ export const FirebaseProvider = (props) => {
         handleNewRoomApplicationSubmit,
         getStudentProfileData,
         getProfileImage,
+        getDefaultProfileImage,
       }}
     >
       {props.children}

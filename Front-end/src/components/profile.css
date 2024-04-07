@@ -68,8 +68,7 @@
     transition: box-shadow 0.3s ease;
     background-color: #DFF5FF;
 }
-.upperinfo:hover,
-.lowerinfo:hover,.personal-info:hover,.academic-info:hover,.contact-info:hover {
+.upperinfo:hover,.lowerinfo:hover,.personal-info:hover,.academic-info:hover,.contact-info:hover {
   box-shadow: 0 0 10px 5px #378CE7; /* Glow effect on hover */
 }
 .maincontent{

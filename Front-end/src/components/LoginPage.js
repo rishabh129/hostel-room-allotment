@@ -77,7 +77,8 @@ const LoginPage = () => {
         });
 
         await updateProfile(auth.currentUser, {
-          displayName: name
+          displayName: name,
+          photoURL: "https://firebasestorage.googleapis.com/v0/b/hostelroomallocation-b14d9.appspot.com/o/uploads%2FuserImage%2FdefaultUserImage.png?alt=media&token=0bf53591-abdb-4da0-93fd-319efe5f0ada"
         });
 
     } else {

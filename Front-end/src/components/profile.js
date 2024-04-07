@@ -25,7 +25,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (user) {
-      //console.log(user.email);
+      console.log(user);
       firebase.getStudentProfileData(user.email).then((student) => {
         setStudent(student.docs[0].data());
         
@@ -136,6 +136,19 @@ function Profile({student}) {
 function UpperInfo({student}) {
   const firebase = useFirebase();
   const [url, setURL] = useState(null);
+  const [user, setUser] = useState(null);
+
+
+  useEffect(() => {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      setUser(auth.currentUser);
+      //console.log(user.email);
+    } else {
+      setUser(null);
+    }
+  }, []);
+
 
   useEffect(() => {
     if (student && student.userPhoto) {
@@ -150,8 +163,8 @@ function UpperInfo({student}) {
   
   return (
     <div className="upperinfo">
-      <img src={url} alt="Profile Picture" />
-      <h3>{student.firstName+" "+student.middleName+" "+student.lastName}</h3>
+      <img src={url || user.photoURL} alt="Profile Picture" />
+      <h3>{user?.displayName}</h3>
     </div>
   );
 }
