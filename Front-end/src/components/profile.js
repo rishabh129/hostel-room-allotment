@@ -159,11 +159,14 @@ function UpperInfo({student}) {
           // Handle error if necessary
         });
     }
+    else{
+      setURL("https://firebasestorage.googleapis.com/v0/b/hostelroomallocation-b14d9.appspot.com/o/uploads%2FuserImage%2FdefaultUserImage.png?alt=media&token=0bf53591-abdb-4da0-93fd-319efe5f0ada")
+    }
   }, [student]); // Add student as a dependency
   
   return (
     <div className="upperinfo">
-      <img src={url || user.photoURL} alt="Profile Picture" />
+      <img src={url} alt="Profile Picture" />
       <h3>{user?.displayName}</h3>
     </div>
   );

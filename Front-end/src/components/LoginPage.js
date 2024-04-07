@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { css } from "@emotion/react";
 import { useHistory, Link } from "react-router-dom";
 import "./styles.css"; // Import CSS file
-import { FadeLoader } from "react-spinners";
 import Navbar from "./Navbar";
 import { database } from "./firebase";
+import Loader from "./loading";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -22,26 +22,6 @@ const LoginPage = () => {
   const [name, setName] = useState("");
   const history = useHistory();
   const [error, setError] = useState("");
-
-  const override = css`
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-    z-index: 1200;
-  `;
-
-  const overlayStyle = {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust the opacity here
-    zIndex: 9999, // Make sure the z-index is higher than other content
-    display: loading ? "flex" : "none",
-    justifyContent: "center",
-    alignItems: "center",
-  };
 
   
   const handleLogin = async (e, type) => {
@@ -77,8 +57,7 @@ const LoginPage = () => {
         });
 
         await updateProfile(auth.currentUser, {
-          displayName: name,
-          photoURL: "https://firebasestorage.googleapis.com/v0/b/hostelroomallocation-b14d9.appspot.com/o/uploads%2FuserImage%2FdefaultUserImage.png?alt=media&token=0bf53591-abdb-4da0-93fd-319efe5f0ada"
+          displayName: name
         });
 
     } else {
@@ -130,14 +109,7 @@ const LoginPage = () => {
     <main className="background_wrapper">
       <Navbar loggedIn={false} />
 
-      <div style={overlayStyle}>
-        <FadeLoader
-          color={"#000000"}
-          loading={loading}
-          css={override}
-          size={150}
-        />
-      </div>
+      <Loader loading = {loading}/>
       <div className="login_form_wrapper">
         <form
           onSubmit={(e) => handleLogin(e, login ? "signin" : "signup")}

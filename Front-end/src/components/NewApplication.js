@@ -1,5 +1,6 @@
 import React, { useState, useRef   } from "react";
 import { useFirebase } from './firebase';
+import Loader from "./loading";
 import "./formStyle.css";
 
 const NewApplication = () => {
@@ -26,6 +27,7 @@ const NewApplication = () => {
   const [userPhoto, setUserPhoto] = useState("")
   const [admissionSlip, setAdmissionSlip] = useState("")
   const [feeReceipt, setFeeReceipt] = useState("")
+  const [loading, setLoading] = useState(false);
 
   const resetFormData = () => {
     setFormData({
@@ -67,14 +69,18 @@ const NewApplication = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission here, you can send formData to your server or perform any other action
-    
+    setLoading(true);
     await firebase.handleNewRoomApplicationSubmit(formData, userPhoto, admissionSlip, feeReceipt);
     console.log("Form Submitted Successfully!");
-    alert("Application Submitted!");
+    
     resetFormData();
+    setLoading(false);
+    alert("Application Submitted!");
   };
 
     return (
+      <>
+      <Loader loading = {loading}/>
         <div className="contain">
             <div className="scrollable-container">
                 <div className="scrollable-content">
@@ -177,6 +183,7 @@ const NewApplication = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
