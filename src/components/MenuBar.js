@@ -4,8 +4,6 @@ import "./MenuBarStyles.css";
 
 const MenuBar = () => {
   return (
-
-
     <nav className="menuBar">
       <NavLink exact to="/dashboard" activeClassName="active" className="nav-link">
         Dashboard

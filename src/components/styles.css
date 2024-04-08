@@ -236,7 +236,7 @@ ion-icon {
 }
 
 /* Navbar styles */
-.navbar {
+.navbar1 {
     position: fixed;
     top: 0;
     
@@ -248,7 +248,7 @@ ion-icon {
     
 }
 
-.navbar__background {
+.navbar__background1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -260,7 +260,7 @@ ion-icon {
     z-index: 998;
 }
 
-.navbar__content {
+.navbar__content1 {
     display: flex;
     
     justify-content: space-between;
@@ -269,15 +269,15 @@ ion-icon {
     
 }
 
-.navbar__logo img {
+.navbar__logo1 img {
     max-height: 40px;
 }
 
-.navbar__spacer {
+.navbar__spacer1 {
     flex-grow: 1;
 }
 
-.navbar__brand {
+.navbar__brand1 {
     font-weight: bold;
     color: rgb(226, 215, 215);
     margin-right: auto;
@@ -285,13 +285,13 @@ ion-icon {
     letter-spacing: 0.125rem;
 }
 
-.navbar__links {
+.navbar__links1 {
     display: flex;
     gap: 20px;
     z-index: 1000;
 }
 
-.navbar__link {
+.navbar__link1 {
     color: rgb(226, 215, 215);
     text-decoration: none;
     cursor: pointer;

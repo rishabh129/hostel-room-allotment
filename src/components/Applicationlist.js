@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { useFirebase } from "./firebase"; // Import useFirebase hook
 import Card from "react-bootstrap/Card";
+import Button from 'react-bootstrap/Button';
+
 
 const ApplicationListPage = () => {
   const [applications, setApplications] = useState([]);
@@ -39,24 +41,41 @@ const ApplicationListPage = () => {
 const ApplicationCard = ({ application }) => {
   return (
     <Card>
+      <Card.Header></Card.Header> 
       <Card.Body>
-        Name :{" "}
-        {application.firstName +
-          " " +
+        <Card.Title>Name : 
+        {" "+application.firstName +
+       " " +
           application.middleName +
           " " +
-          application.lastName}
-
-Student ID: {application.studentId}
+          application.lastName}</Card.Title>
+        <Card.Text>
+        Roll No : {application.studentId}
+        </Card.Text>
+        <Button variant="primary">View Application</Button>
       </Card.Body>
     </Card>
+  );
+
+//     <Card>
+//       <Card.Body>
+//         Name :{" "}
+//         {application.firstName +
+//           " " +
+//           application.middleName +
+//           " " +
+//           application.lastName}
+
+// Student ID: {application.studentId}
+//       </Card.Body>
+//     </Card>
     // <div className="card">
     //   <h3>{application.type}</h3>
     //   <p>Name: {application.firstName + " "+ application.middleName +" "+ application.lastName}</p>
     //   <p>Student ID: {application.studentId}</p>
     //   {/* Add more details as needed */}
     // </div>
-  );
+  
 };
 
 export default ApplicationListPage;

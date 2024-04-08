@@ -30,28 +30,28 @@ const Navbar = ({loggedIn}) => {
 
   return (
     <div>
-      <div className="navbar">
-        <div className="navbar__content">
-          <div className="navbar__logo">
+      <div className="navbar1">
+        <div className="navbar__content1">
+          <div className="navbar__logo1">
             <img src={logo} alt="Logo" />
           </div>
-          <div className="navbar__brand">BIRLA INSTITUTE OF TECHNOLOGY</div>
-          <div className="navbar__links">
+          <div className="navbar__brand1">BIRLA INSTITUTE OF TECHNOLOGY</div>
+          <div className="navbar__links1">
             
           {loggedIn?
             (
-            <span className="navbar__link email">{user ? "Welcome, "+ user.displayName : ""}</span>
+            <span className="navbar__link1 email">{user ? "Welcome, "+ user.displayName : ""}</span>
             ):""}
             
-            <Link to="/about" className="navbar__link">
+            <Link to="/about" className="navbar__link1">
               About
             </Link>
 
             {loggedIn?
             (
-            <span onClick={handleSignOut} className="navbar__link">Sign Out</span>
+            <span onClick={handleSignOut} className="navbar__link1">Sign Out</span>
             ):(
-            <Link to="/" className="navbar__link">
+            <Link to="/" className="navbar__link1">
             Sign-In
           </Link>)
             }
