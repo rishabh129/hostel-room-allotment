@@ -52,8 +52,8 @@
 
 .noticeSection{
     width: 15vw;
-    color: black;
-    background-color: #67c6e3ad;
+    
+    background-color: hsla(243, 83%, 35%, 0.786);
     box-shadow: 2px #00c0ef;
     color: #201e1e;
 }

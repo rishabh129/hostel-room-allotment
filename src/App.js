@@ -8,7 +8,6 @@ import ApplicationPage from './components/ApplicationPage';
 import Profile from './components/profile'; 
 import ContactForm from './components/contactus';
 import adminDashboard from './components/adminDashboard';
-import Swaproom from  './components/swaproom';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -24,7 +23,6 @@ const App = () => {
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route path="/about" component={About} /> 
           <Route path="/application" component={ApplicationPage} />
-          <Route path="/swaproom" component={Swaproom} />
           <Route path="/profile" component={Profile} />
           <Route path="/contactus" component={ContactForm} />
           <Route path="/admin" component={adminDashboard} />
