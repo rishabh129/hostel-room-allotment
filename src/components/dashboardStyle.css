@@ -18,6 +18,7 @@
   display: flex;
   margin-left: 0.25%;
   height: 76vh;
+ 
   
 
 }
@@ -170,4 +171,8 @@
   color: #080808;
   font-size: 15px;
 
+}
+.bodyContent
+{
+  z-index: -1;
 }
