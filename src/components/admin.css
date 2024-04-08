@@ -1,31 +1,46 @@
+.admin-main{
+     height: 100%;
+     padding-left: 20px;
+     padding-right: 20px;
+     width: 100%;
+     background-color: #dff5ffbd;
+     margin: 3% auto; 
+     margin-top: 65px;
+     padding-bottom:20px ;
+  
+}
+.container-admin h3 {
+    position: absolute; /* Position the h3 element absolutely */
+    top: 19%; /* Position from the top */
+    transform: translateY(-100%); /* Move it up by half its height */
+}
 .container-admin {
     display: flex;
-    flex-direction: column; /* Change to column layout */
-    justify-content: center; /* Center the container horizontally */
-    align-items: center; /* Center the container vertically */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    height: 100%;
-    width: 100%; /* Adjust width as needed */
     background-color: #DFF5FF;
-    margin: 3% auto; /* Center the container horizontally */
+    
     border-radius: 13px;
     border: 2px solid #378CE7;
-    margin-top: 65px;
+
 }
 
 .dashboard-card {
-    background-color: #378CE7;
-    padding: 20px;
-    width: 80%; /* Adjust width to fill the container */
-    max-width: 500px; /* Limit maximum width */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
     display: flex;
-    flex-wrap: wrap; /* Allow contents to wrap into multiple rows */
+    flex-direction: row; /* Change to row layout */
     justify-content: center; /* Center contents horizontally */
     align-items: center;
-    margin-bottom: 20px; /* Add margin-bottom */
-    flex-grow: 1; /* Allow card to grow to fill available space */
+    background-color: #378CE7;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 8px rgba(5, 34, 109, 0.799);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    margin: 20px 20px;
 }
 
 .dashboard-card h2 {
@@ -34,36 +49,109 @@
 }
 
 .pie-chart {
-    width: 200px; /* Adjust width as needed */
-    height: 200px; /* Adjust height as needed */
-    background-color: #e0e0e0; /* Placeholder color */
+    width: 200px;
+    height: 200px;
+    background-color: #e0e0e0;
     border-radius: 50%;
-    margin: 10px; /* Adjust margin */
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.689);
 }
 
 .admin-work {
-    display: flex;
-    flex-direction: row; /* Adjust to row layout */
-    justify-content: center; /* Center the buttons horizontally */
-    margin-top: 20px; /* Add margin to separate from dashboard-cards */
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center; /* Center the items horizontally */
+    margin-top: 20px;
+}
+
+.admin-work h2 {
+    margin-bottom: 10px; /* Add margin below each h2 */
 }
 
 .big-button {
-    margin: 0 10px; /* Adjust margin between buttons */
-    padding: 15px 30px; /* Increase padding for a bigger button */
-    background: linear-gradient(to right, #007bff, #00a0ff, #00d3ff, #00fffc, #00ffdd, #00ffae); /* Rainbow gradient effect */
+    padding: 10px 20px; /* Adjust button padding */
+    background-color: #378CE7;
     color: #ffffff;
     border: none;
-    border-radius: 50px; /* Use border-radius for curved edges */
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 18px; /* Increase font size */
-    text-transform: uppercase; /* Convert text to uppercase */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
-    transition: all 0.3s ease; /* Smooth transition effect */
-    margin-bottom: 1em;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
 }
 
 .big-button:hover {
-    transform: scale(1.05); /* Increase size on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
+    background-color: #0056b3; /* Darker shade of blue on hover */
 }
+
+
+.big-button {
+    margin: 0 10px;
+    padding: 15px 30px;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    height: 50px;
+    width: 300px;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: rainbow 2s linear infinite;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, #0d00ff, #00a0ff, #00d3ff, #00fffc, #007bff, #00ffae);
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.big-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.705);
+    animation: none;
+}
+
+.pie-chart:hover {
+    transform: scale(1.12);
+    transition-behavior: smooth;
+    box-shadow: 8px 8px 16px rgba(3, 57, 82, 0.705);
+      cursor: pointer;
+}
+/* welcome message */
+.welcome {
+    color: green; /* Set the color of the welcome message */
+    animation: slideIn 10s linear infinite; /* Apply the slide animation */
+    opacity: 0; /* Start with zero opacity */
+    white-space: nowrap;
+    
+    
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Start with zero opacity */
+    }
+    50% {
+        opacity: 1; /* Fade in the message halfway through the animation */
+    }
+    100% {
+        transform: translateX(100%); /* Slide to the right */
+        opacity: 1; /* Maintain full opacity */
+    }
+}
+
+
+/* For WebKit browsers (such as Chrome, Safari) */
+
