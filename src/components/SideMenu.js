@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
 import {UpperInfo, LowerInfo} from "./profile";
 import { useFirebase} from "./firebase";
 import { getAuth } from "firebase/auth";
@@ -40,7 +39,7 @@ const SideMenu = () => {
           console.error("Error getting student profile data:", error);
         });
     }
-  }, [user]);
+  }, [user, firebase]);
   
   return(
     <div className="sidemenu">

@@ -3,7 +3,6 @@ import "./dashboardStyle.css";
 import Navbar from "./Navbar";
 import MenuBar from "./MenuBar";
 import NewApplication from "./NewApplication";
-import MainMenu from "./MainMenu";
 
 const ApplicationPage = () => {
   return (

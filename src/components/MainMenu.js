@@ -9,11 +9,11 @@ const MainMenu = ({page}) => {
         <div className="bodyContent">
           <SideMenu/>
 
-          {page == "dashboard"?(
+          {page === "dashboard"?(
             <StudentDashboard />
           ):""
           }
-          {page == "application"?(
+          {page === "application"?(
             <NewApplication />
           ):""
           }

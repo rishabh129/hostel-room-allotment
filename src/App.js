@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import { database } from './components/firebase'; // Import your Firebase auth module
 import LoginPage from './components/LoginPage';

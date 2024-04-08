@@ -31,7 +31,7 @@ const ProfilePage = () => {
         
       });
     }
-  }, [user]); 
+  }, [user, firebase]); 
   return (
     <div className="dashboardBody">
       <Navbar loggedIn={true} />
@@ -162,11 +162,11 @@ function UpperInfo({student}) {
     else{
       setURL("https://firebasestorage.googleapis.com/v0/b/hostelroomallocation-b14d9.appspot.com/o/uploads%2FuserImage%2FdefaultUserImage.png?alt=media&token=0bf53591-abdb-4da0-93fd-319efe5f0ada")
     }
-  }, [student]); // Add student as a dependency
+  }, [student, firebase]); // Add student as a dependency
   
   return (
     <div className="upperinfo">
-      <img src={url} alt="Profile Picture" />
+      <img src={url} alt=""/>
       <h3>{user?.displayName}</h3>
     </div>
   );

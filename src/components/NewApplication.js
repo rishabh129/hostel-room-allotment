@@ -1,4 +1,4 @@
-import React, { useState, useRef   } from "react";
+import React, { useState } from "react";
 import { useFirebase } from './firebase';
 import Loader from "./loading";
 import "./formStyle.css";
@@ -51,16 +51,6 @@ const NewApplication = () => {
     });
   };
   
-  const photoInputRef = useRef(null);
-  const admissionSlipInputRef = useRef(null);
-  const feeReceiptInputRef = useRef(null);
-
-  const resetFileInputs = () => {
-    photoInputRef.current.value = "";
-    admissionSlipInputRef.current.value = "";
-    feeReceiptInputRef.current.value = "";
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });

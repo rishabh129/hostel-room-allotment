@@ -31,9 +31,7 @@ const StudentDashboard = () => {
                   <div className="icon">
                     <i className="fa fa-money" aria-hidden="true"></i>
                   </div>
-                  <a href="#" className="card-box-footer">
-                    View More <i className="fa fa-arrow-circle-right"></i>
-                  </a>
+                  <Link to="/application"><span className="card-box-footer">View More  <i className="fa fa-arrow-circle-right"></i></span></Link>
                 </div>
               </div>
 
@@ -46,9 +44,7 @@ const StudentDashboard = () => {
                   <div className="icon">
                     <i className="fa fa-user-plus" aria-hidden="true"></i>
                   </div>
-                  <a href="#" className="card-box-footer">
-                    View More <i className="fa fa-arrow-circle-right"></i>
-                  </a>
+                  <Link to="/application"><span className="card-box-footer">View More  <i className="fa fa-arrow-circle-right"></i></span></Link>
                 </div>
               </div>
             </div>

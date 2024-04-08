@@ -1,16 +1,13 @@
 // firebase.js
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext} from "react";
 
 import {
   getFirestore,
   collection,
   addDoc,
   getDocs,
-  getDoc,
-  doc,
   query,
   where,
 } from "firebase/firestore";
@@ -31,7 +28,7 @@ const firebaseConfig = {
 export const useFirebase = () => useContext(FirebaseContext);
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 const database = getAuth(app);
 const firestore = getFirestore(app);
 const storage = getStorage(app);

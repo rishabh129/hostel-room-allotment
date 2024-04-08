@@ -1,4 +1,3 @@
-import logo from "../logo-bit.png";
 import "../App.css";
 import "./styles.css";
 import Navbar from './Navbar';

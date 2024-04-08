@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { css } from "@emotion/react";
 import { useHistory, Link } from "react-router-dom";
 import "./styles.css"; // Import CSS file
 import Navbar from "./Navbar";
-import { database } from "./firebase";
 import Loader from "./loading";
 import {
   getAuth,
@@ -21,7 +19,6 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const history = useHistory();
-  const [error, setError] = useState("");
 
   
   const handleLogin = async (e, type) => {
@@ -34,7 +31,7 @@ const LoginPage = () => {
       
       await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        // const user = userCredential.user;
         
         // Send email verification
         sendEmailVerification(auth.currentUser)
@@ -117,13 +114,13 @@ const LoginPage = () => {
         >
           <div className="titleAlign">
             <div
-              className={login == true ? "activeSignIn" : "activeSignUp"}
+              className={login === true ? "activeSignIn" : "activeSignUp"}
               onClick={() => setLogin(true)}
             >
               SIGN IN
             </div>
             <div
-              className={login == false ? "activeSignIn" : "activeSignUp"}
+              className={login === false ? "activeSignIn" : "activeSignUp"}
               onClick={() => setLogin(false)}
             >
               SIGN UP
