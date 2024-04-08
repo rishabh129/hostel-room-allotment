@@ -131,7 +131,7 @@
 /* welcome message */
 .welcome {
     color: green; /* Set the color of the welcome message */
-    animation: slideIn 10s linear infinite; /* Apply the slide animation */
+    animation: slideIn 20s linear infinite; /* Apply the slide animation */
     opacity: 0; /* Start with zero opacity */
     white-space: nowrap;
     

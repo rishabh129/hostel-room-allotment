@@ -7,18 +7,22 @@ const AdminDashboard = () => {
 
     <div className="admin-main">
        <Navbar></Navbar>
-       <h3 class="welcome">Welcome, </h3>
+       <h3 class="welcome">Welcome, administrator! Get ready to elevate your hostel's management experience with our intuitive platform.</h3>
 
         <div className="container-admin">
        <h3 >Application Usage Statistics</h3>
       <div className="dashboard-card">
         <h2>Applications</h2>
-        <div className="pie-chart" id="application-chart"></div>
+        <div className="pie-chart" id="application-chart">
+
+        </div>
       </div>
 
       <div className="dashboard-card">
         <h2>Rooms</h2>
-        <div className="pie-chart" id="room-chart"></div>
+        <div className="pie-chart" id="room-chart">
+
+        </div>
       </div>
       </div>
     <div className="admin-work">
