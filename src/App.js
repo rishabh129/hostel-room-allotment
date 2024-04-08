@@ -9,8 +9,6 @@ import Profile from './components/profile';
 import ContactForm from './components/contactus';
 import adminDashboard from './components/adminDashboard';
 import ApplicationListPage from './components/Applicationlist';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
     database.currentUser ? <Component {...props} /> : <Redirect to="/dashboard" />
