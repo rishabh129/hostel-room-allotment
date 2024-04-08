@@ -1,11 +1,27 @@
 import React from "react";
+import Navbar from './Navbar';
+import "./admin.css";
 
-const adminDashboard = () => {
+const AdminDashboard = () => {
   return (
-    <div>
-      <h1>Admin</h1>
+        <div className="container-admin">
+      
+      <div className="dashboard-card">
+        <h2>Applications</h2>
+        <div className="pie-chart" id="application-chart"></div>
+      </div>
+
+      <div className="dashboard-card">
+        <h2>Rooms</h2>
+        <div className="pie-chart" id="room-chart"></div>
+      </div>
+
+      <div className="admin-work">
+        <button className="big-button">Application List</button>
+        <button className="big-button">List of Rooms</button>
+      </div>
     </div>
   );
 };
 
-export default adminDashboard; //change to export default when using class component
+export default AdminDashboard;

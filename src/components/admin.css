@@ -1,0 +1,69 @@
+.container-admin {
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    padding: 20px;
+    height: 100vh;
+    width: 90vw; /* Adjust width as needed */
+    background-color: #DFF5FF;
+    margin: 3% auto; /* Center the container horizontally */
+    border-radius: 13px;
+    border: 2px solid #378CE7;
+    margin-top: 65px;
+}
+
+.dashboard-card {
+    background-color: #378CE7;
+    padding: 20px;
+    width: 90%; /* Adjust width to fill the container */
+    max-width: 600px; /* Limit maximum width */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    display: flex;
+    flex-wrap: wrap; /* Allow contents to wrap into multiple rows */
+    justify-content: center; /* Center contents horizontally */
+    align-items: center;
+    margin-bottom: 20px; /* Add margin-bottom */
+    flex-grow: 1; /* Allow card to grow to fill available space */
+}
+
+.dashboard-card h2 {
+    margin-bottom: 10px;
+    margin-right: 80px;
+}
+
+.pie-chart {
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    background-color: #e0e0e0; /* Placeholder color */
+    border-radius: 50%;
+    margin: 10px; /* Adjust margin */
+}
+
+.admin-work {
+    display: flex;
+    flex-direction: row; /* Adjust to row layout */
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 20px; /* Add margin to separate from dashboard-cards */
+}
+
+.big-button {
+    margin: 0 10px; /* Adjust margin between buttons */
+    padding: 15px 30px; /* Increase padding for a bigger button */
+    background: linear-gradient(to right, #007bff, #00a0ff, #00d3ff, #00fffc, #00ffdd, #00ffae); /* Rainbow gradient effect */
+    color: #ffffff;
+    border: none;
+    border-radius: 50px; /* Use border-radius for curved edges */
+    cursor: pointer;
+    font-size: 18px; /* Increase font size */
+    text-transform: uppercase; /* Convert text to uppercase */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    transition: all 0.3s ease; /* Smooth transition effect */
+    margin-bottom: 1em;
+}
+
+.big-button:hover {
+    transform: scale(1.05); /* Increase size on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
+}
