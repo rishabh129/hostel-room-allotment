@@ -140,14 +140,14 @@
 
 @keyframes slideIn {
     0% {
-        transform: translateX(-100%); /* Start off-screen to the left */
+        transform: translateX(100%); /* Start off-screen to the left */
         opacity: 0; /* Start with zero opacity */
     }
     50% {
         opacity: 1; /* Fade in the message halfway through the animation */
     }
     100% {
-        transform: translateX(100%); /* Slide to the right */
+        transform: translateX(-100%); /* Slide to the right */
         opacity: 1; /* Maintain full opacity */
     }
 }

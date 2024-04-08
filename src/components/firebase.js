@@ -30,7 +30,7 @@ export const useFirebase = () => useContext(FirebaseContext);
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 const database = getAuth(app);
-const firestore = getFirestore(app);
+export const firestore = getFirestore(app);
 const storage = getStorage(app);
 
 export { database };
@@ -76,9 +76,12 @@ export const FirebaseProvider = (props) => {
       program: formData.program,
       permanentAddress: formData.permanentAddress,
       currentAddress: formData.currentAddress,
+      hostel: 0,
+      room: 0,
       userPhoto: uploadPhoto.ref.fullPath,
       admissionSlip: uploadAdmSlip.ref.fullPath,
       feeReceipt: uploadFeeReceipt.ref.fullPath,
+
     });
 
     await addDoc(collection(firestore, "student"), {
@@ -120,6 +123,21 @@ export const FirebaseProvider = (props) => {
     return getDownloadURL(ref(storage, "uploads/userImage/defaultUserImage"));
   };
 
+  const fetchApplications = async (collectionName) => {
+    try {
+      const documentsRef = collection(firestore, collectionName);
+      const snapshot = await getDocs(documentsRef);
+      const documents = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      return documents;
+    } catch (error) {
+      console.error(`Error fetching documents from collection ${collectionName}:`, error);
+      return []; // Return an empty array or handle the error as needed
+    }
+  };
+
   return (
     <FirebaseContext.Provider
       value={{
@@ -127,6 +145,7 @@ export const FirebaseProvider = (props) => {
         getStudentProfileData,
         getProfileImage,
         getDefaultProfileImage,
+        fetchApplications,
       }}
     >
       {props.children}

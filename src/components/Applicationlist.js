@@ -1,56 +1,61 @@
 import React, { useState, useEffect } from "react";
-import React from "react";
-import Navbar from './Navbar';
+import Navbar from "./Navbar";
+import { useFirebase } from "./firebase"; // Import useFirebase hook
+import Card from "react-bootstrap/Card";
 
 const ApplicationListPage = () => {
   const [applications, setApplications] = useState([]);
+  const firebase = useFirebase(); // Access the firebase object using the useFirebase hook
 
   useEffect(() => {
-    // Fetch applications data from backend API
-    fetchApplications();
-  }, []);
+    const fetchData = async () => {
+      try {
+        // Fetch applications from the 'newroom' collection
+        const newRoomApplications = await firebase.fetchApplications("newroom");
 
-  const fetchApplications = async () => {
-    try {
-      // Fetch applications data from backend API
-      const response = await fetch("YOUR_BACKEND_API_ENDPOINT");
-      if (response.ok) {
-        const data = await response.json();
-        // Update state with the fetched applications data
-        setApplications(data.applications);
-      } else {
-        console.error("Failed to fetch applications data");
+        // Set the fetched applications in state
+        setApplications(newRoomApplications);
+      } catch (error) {
+        console.error("Error fetching applications:", error);
       }
-    } catch (error) {
-      console.error("Error fetching applications data:", error);
-    }
-  };
+    };
+
+    fetchData();
+  }, [firebase]); // Include firebase in the dependency array to re-fetch applications if firebase object changes
 
   return (
-    <div className="application-list-page">
-        <Nav></Nav>
+    <div>
+      <Navbar />
       <h2>Application List</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Application ID</th>
-            <th>Name</th>
-            <th>Status</th>
-            {/* Add more table headers as needed */}
-          </tr>
-        </thead>
-        <tbody>
-          {applications.map((application) => (
-            <tr key={application.id}>
-              <td>{application.id}</td>
-              <td>{application.name}</td>
-              <td>{application.status}</td>
-              {/* Render more application details as needed */}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="application-list">
+        {applications.map((application) => (
+          <ApplicationCard key={application.id} application={application} />
+        ))}
+      </div>
     </div>
+  );
+};
+
+const ApplicationCard = ({ application }) => {
+  return (
+    <Card>
+      <Card.Body>
+        Name :{" "}
+        {application.firstName +
+          " " +
+          application.middleName +
+          " " +
+          application.lastName}
+
+Student ID: {application.studentId}
+      </Card.Body>
+    </Card>
+    // <div className="card">
+    //   <h3>{application.type}</h3>
+    //   <p>Name: {application.firstName + " "+ application.middleName +" "+ application.lastName}</p>
+    //   <p>Student ID: {application.studentId}</p>
+    //   {/* Add more details as needed */}
+    // </div>
   );
 };
 

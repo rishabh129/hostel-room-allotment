@@ -4,10 +4,11 @@ import Dashboard from './components/Dashboard';
 import { database } from './components/firebase'; // Import your Firebase auth module
 import LoginPage from './components/LoginPage';
 import About from './components/About';
-import ApplicationPage from './components/ApplicationPage';
+import NewApplication from './components/NewApplication';
 import Profile from './components/profile'; 
 import ContactForm from './components/contactus';
 import adminDashboard from './components/adminDashboard';
+import ApplicationListPage from './components/Applicationlist';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -22,10 +23,11 @@ const App = () => {
         <Switch>
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route path="/about" component={About} /> 
-          <Route path="/application" component={ApplicationPage} />
+          <Route path="/application" component={NewApplication} />
           <Route path="/profile" component={Profile} />
           <Route path="/contactus" component={ContactForm} />
           <Route path="/admin" component={adminDashboard} />
+          <Route path="/applications" component={ApplicationListPage} />
           
           <Route path="/" component={LoginPage} />
           
