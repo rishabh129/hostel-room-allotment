@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./vacateRoom.css"; // Import your CSS file
+import Navbar from "./Navbar";
+import MenuBar from "./MenuBar";
 
 const VacateRoomForm = () => {
   const [formData, setFormData] = useState({
@@ -36,6 +38,9 @@ const VacateRoomForm = () => {
   };
 
   return (
+    <>
+    <Navbar loggedIn={true}/>
+    <MenuBar/>
     <div className="vacate-room-form">
       <div className="divider">
         <span className="glow-text">Vacate-Room Application Form</span>
@@ -98,6 +103,7 @@ const VacateRoomForm = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 

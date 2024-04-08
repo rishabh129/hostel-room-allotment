@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./MenuBarStyles.css";
 
 const MenuBar = () => {
@@ -32,7 +32,7 @@ const MenuBar = () => {
       <NavLink to="/profile" activeClassName="active" className="nav-link">
         Profile
       </NavLink>
-      <NavLink to="/application-status" activeClassName="active" className="nav-link">
+      <NavLink to="/application/status" activeClassName="active" className="nav-link">
         Application Status
       </NavLink>
       <NavLink to="/contactus" activeClassName="active" className="nav-link">
@@ -45,13 +45,13 @@ const MenuBar = () => {
             &#10006; {/* Close symbol (X) */}
           </button>
           <button className="popup-button" onClick={handleNewApplication}>
-            New Application
+          <Link to="/application/new">New Application</Link>
           </button>
           <button className="popup-button" onClick={handleSwapRoom}>
-            Swap Room
+          <Link to="/application/swap">Swap Room</Link>
           </button>
           <button className="popup-button" onClick={handleVacateRoom}>
-            Vacate Room
+          <Link to="/application/vacate">Vacate Room</Link>
           </button>
         </div>
       )}

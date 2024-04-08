@@ -1,4 +1,3 @@
-@ -0,0 +1,199 @@
 import React, {useState} from 'react';
 import "./swaproom.css";
 import Loader from "./loading";
