@@ -5,6 +5,9 @@ import "./admin.css";
 const AdminDashboard = () => {
   return (
         <div className="container-admin">
+          <div className="nav">
+            <Navbar></Navbar>
+          </div>
       
       <div className="dashboard-card">
         <h2>Applications</h2>
