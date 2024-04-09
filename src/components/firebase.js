@@ -114,6 +114,15 @@ export const FirebaseProvider = (props) => {
     return result;
   };
 
+  const getApplication = async (studentId, type) => {
+    const collectionRef = collection(firestore, type);
+    const q = query(collectionRef, where("studentId", "==", studentId));
+
+    const result = await getDocs(q);
+    console.log(result);
+    return result;
+  };
+
   const getProfileImage = (path) =>{
     console.log(path);
     return getDownloadURL(ref(storage, path));
@@ -146,6 +155,7 @@ export const FirebaseProvider = (props) => {
         getProfileImage,
         getDefaultProfileImage,
         fetchApplications,
+        getApplication,
       }}
     >
       {props.children}

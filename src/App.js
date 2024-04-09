@@ -12,6 +12,7 @@ import ApplicationListPage from './components/Applicationlist';
 import AppStatus from './components/AppStatus';
 import VacateRoomForm from './components/VacateRoom';
 import SwapRoomApplicationForm from './components/swaproom';
+import ViewNewRoomForm from './components/ViewNewRoomForm';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/application/status" component={AppStatus} />
           <Route path="/application/swap" component={SwapRoomApplicationForm} />
           <Route path="/application/vacate" component={VacateRoomForm} />
+          <Route path="/view-new-room" component={ViewNewRoomForm} />
           
           <Route path="/" component={LoginPage} />
           

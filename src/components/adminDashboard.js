@@ -36,14 +36,20 @@ const AdminDashboard = () => {
           Applications
         </button>
         {showPopup && (
-          <div className="popup">
-            <button className="close-button" onClick={togglePopup}>
-              X
-            </button>
-            <button className="admin-button">New rooms</button>
-            <button className="admin-button">Swap rooms</button>
-            <button className="admin-button">Vacate room</button>
-          </div>
+              <div className="popup">
+              <button className="close-button" onClick={togglePopup}>
+                X
+              </button>
+              <Link to="/applications?type=newroom">
+                <button className="admin-button">New Room Applications</button>
+              </Link>
+              <Link to="/applications?type=swaproom">
+                <button className="admin-button">Swap Room Applications</button>
+              </Link>
+              <Link to="/applications?type=vacateroom">
+                <button className="admin-button">Vacate Room Applications</button>
+              </Link>
+            </div>
         )}
         <br />
         <br />
