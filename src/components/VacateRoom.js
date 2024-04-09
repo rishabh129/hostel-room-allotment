@@ -41,8 +41,8 @@ const VacateRoomForm = () => {
    
       
     <div className="divider">
-       <Navbar></Navbar>
-      <Menubar className='menu' />
+       <Navbar loggedIn={true}/>
+      <Menubar/>
   
       {/* <span className="glow-text">Vacate-Room Application Form</span> */}
       <form action="#" method="POST" onSubmit={handleSubmit}>
@@ -79,7 +79,7 @@ const VacateRoomForm = () => {
 
         {/* Academic Information */}
         <fieldset className="academic-info-section">
-          <legend>Academic Information (Student 1)</legend>
+          <legend>Academic Information</legend>
           <label htmlFor="current-course">Current Course:</label>
           <input type="text" id="current-course" name="currentCourse" value={formData.currentCourse} onChange={handleChange} required /><br />
           <label htmlFor="start-year">Start of Course Year:</label>
