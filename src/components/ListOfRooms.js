@@ -72,7 +72,7 @@ const RoomMatrix = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar loggedIn={true}/>
       <div className="room-container">
         {roomData.map((roomInfo, index) => (
           <div key={index} className="room-card-container">
