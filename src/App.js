@@ -17,7 +17,7 @@ import ListOfRooms from './components/ListOfRooms';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    database.currentUser ? <Component {...props} /> : <Redirect to="/dashboard" />
+    database.currentUser ? <Component {...props} /> : <Redirect to="/" />
   )} />
 );
 
@@ -31,7 +31,7 @@ const App = () => {
           <Route path="/application/new" component={NewApplication} />
           <Route path="/profile" component={Profile} />
           <Route path="/contactus" component={ContactForm} />
-          <Route path="/admin" component={adminDashboard} />
+          <PrivateRoute path="/admin" component={adminDashboard} />
           <Route path="/applications" component={ApplicationListPage} />
           <Route path="/application/status" component={AppStatus} />
           <Route path="/application/swap" component={SwapRoomApplicationForm} />

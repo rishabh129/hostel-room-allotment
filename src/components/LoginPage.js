@@ -62,9 +62,20 @@ const LoginPage = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          if (user.emailVerified && ((role==="admin"&&user.uid===adminUid) || (role==="student" && !user.uid===adminUid))) {
-            console.log("Logged in successfully! Hello, ", email);
+          if (user.emailVerified) {
+            if(role==="admin"&&user.uid===adminUid){
+              console.log("Logged in successfully! Hello, ", email);
+            history.push("/admin");
+            }
+            else if(role==="student" && !(user.uid===adminUid)){
+              console.log("Logged in successfully! Hello, ", email);
             history.push("/dashboard");
+            }
+            else{
+              setLoading(false);
+            alert("Please select correct role!");
+            }
+            
           } else {
             setLoading(false);
             alert("Please verify your email to log in.");
@@ -222,7 +233,7 @@ const LoginPage = () => {
                     className="radio-switch-input" 
                     
                   />
-                  <label htmlFor="radio1" className="radio-switch-label">Admin</label>
+                  <label htmlFor="radio1" className="radio-switch-label">Student</label>
 
                   <input
                     type="radio"
@@ -233,7 +244,7 @@ const LoginPage = () => {
                     onChange={handleOptionChange}
                     className="radio-switch-input"
                   />
-                  <label htmlFor="radio2" className="radio-switch-label">Student</label>
+                  <label htmlFor="radio2" className="radio-switch-label">Admin</label>
                   <div className="slide-indicator"></div>
                 </div>
               </div>

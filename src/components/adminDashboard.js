@@ -12,7 +12,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="admin-main">
-      <Navbar></Navbar>
+      <Navbar loggedIn={true}/>
       <h3 class="welcome">
         Welcome, administrator! Get ready to elevate your hostel's management
         experience with our intuitive platform.
