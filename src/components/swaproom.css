@@ -103,13 +103,13 @@ h1{
   margin-left: 44%;
 }
 
-.button-22:active {
+/* .button-22:active {
   background-color: #006AE8;
 }
 
 .button-22:hover {
   background-color: #1C84FF;
-}
+} */
 span{
     border-radius: solid black 5px;
 }
@@ -135,15 +135,15 @@ fieldset{
  
 }
 
-input[type="radio"] {
+/* input[type="radio"] {
   display: none;
-}
+} */
 
 label {
   cursor: pointer;
 }
 
-input[type="radio"] + label {
+/* input[type="radio"] + label {
   padding: 10px 20px;
   border-radius: 5px;
   background-color: #f0f0f0;
@@ -153,7 +153,7 @@ input[type="radio"] + label {
 input[type="radio"]:checked + label {
   background-color: #0069d9;
   color: #fff;
-}
+} */
 
 .divider {
   margin-top: 5%;
