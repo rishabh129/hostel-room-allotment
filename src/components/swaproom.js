@@ -20,7 +20,7 @@ const SwapRoomApplicationForm = () => {
           <Navbar/>
           <Menubar/>
           <Loader loading={loading}/>
-          
+          <div className='containswap'>
                
            <div className="divider">
         <span className="glow-text">Student-1 Details</span>
@@ -191,7 +191,7 @@ const SwapRoomApplicationForm = () => {
         {/* <!-- Submit Button --> */}
         <button className="button-22" type="submit">Submit</button>
     </form>
-
+</div>
         </>
     );
 };

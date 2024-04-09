@@ -217,6 +217,9 @@ ion-icon {
     align-items: center; /* Vertical alignment */
     position: relative;
 }
+.login_content_box::placeholder>{
+    color: #000000;
+}
 
 .login__label {
     margin-right: 10px; /* Adjust spacing between icon and label */
@@ -330,6 +333,8 @@ ion-icon {
     position: relative;
     border: 1px solid #ccc;
     border-radius: 20px;
+    color: #000000;
+   
     
   }
   
@@ -352,7 +357,7 @@ ion-icon {
   
 .radio-switch-input:checked + .radio-switch-label {
     /* background-color: #007bff; */
-    color: #fff;
+    color: #000000;
     transition: background-color 0.3s, color 0.3s;
   }
   
@@ -380,4 +385,6 @@ ion-icon {
     margin: 0px 0px 0px 220px;
     line-height: 28px;
 }
-  
+  .login__input::placeholder {
+  color: rgb(11, 7, 123); /* Change the color to your desired color */
+}
