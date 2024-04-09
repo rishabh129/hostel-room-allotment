@@ -1,0 +1,29 @@
+.appBox{
+    margin: 10px 0px 15px 0px;
+    max-width: 100%;
+    padding: 10px;
+    background-color: rgb(150, 139, 139);
+    line-height: 23px;
+}
+.application-list{
+    margin: 30px;
+}
+.appListHeading{
+    margin: 70px;
+}
+
+.appTable td{
+    width: 240px;
+    padding: 0px 5px;
+    font-size: 18px;
+}
+
+.viewAppButton{
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 5px;
+}
+.appBtn{
+    
+    background-color: rgba(10, 45, 93, 0.731);
+}

@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { useFirebase } from "./firebase"; // Import useFirebase hook
-import Card from "react-bootstrap/Card";
-import Button from 'react-bootstrap/Button';
-
-
+import "./appList.css";
 const ApplicationListPage = () => {
   const [applications, setApplications] = useState([]);
   const firebase = useFirebase(); // Access the firebase object using the useFirebase hook
@@ -28,7 +25,7 @@ const ApplicationListPage = () => {
   return (
     <div>
       <Navbar />
-      <h2>Application List</h2>
+      <h2 className="appListHeading">Application List</h2>
       <div className="application-list">
         {applications.map((application) => (
           <ApplicationCard key={application.id} application={application} />
@@ -40,42 +37,28 @@ const ApplicationListPage = () => {
 
 const ApplicationCard = ({ application }) => {
   return (
-    <Card>
-      <Card.Header></Card.Header> 
-      <Card.Body>
-        <Card.Title>Name : 
-        {" "+application.firstName +
-       " " +
-          application.middleName +
-          " " +
-          application.lastName}</Card.Title>
-        <Card.Text>
-        Roll No : {application.studentId}
-        </Card.Text>
-        <Button variant="primary">View Application</Button>
-      </Card.Body>
-    </Card>
+    <div className="appBox">
+      <table border="0" className="appTable">
+        <tbody>
+          <tr>
+            <td>
+              Name:
+              {" " +
+                application.firstName +
+                " " +
+                application.middleName +
+                " " +
+                application.lastName}
+            </td>
+            <td>Roll No: {application.studentId}</td>
+            <td>Course: {application.currentCourse}</td>
+            <td style={{ width: '33%' }}>Email: {application.contactEmail}</td>
+            <td className="appBtn"><button className="viewAppButton">View Application</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
-
-//     <Card>
-//       <Card.Body>
-//         Name :{" "}
-//         {application.firstName +
-//           " " +
-//           application.middleName +
-//           " " +
-//           application.lastName}
-
-// Student ID: {application.studentId}
-//       </Card.Body>
-//     </Card>
-    // <div className="card">
-    //   <h3>{application.type}</h3>
-    //   <p>Name: {application.firstName + " "+ application.middleName +" "+ application.lastName}</p>
-    //   <p>Student ID: {application.studentId}</p>
-    //   {/* Add more details as needed */}
-    // </div>
-  
 };
 
 export default ApplicationListPage;
