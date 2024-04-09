@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NoticeSection = () => {
     return(
         <div className="noticeSection">
-            <h1>Notice</h1>
+            <h1 className="NoticeHeading">Notice</h1>
             <ul className="menuItems">
               <li className="menuItem">
                 <Link to="/dashboard">Notice 1</Link>
