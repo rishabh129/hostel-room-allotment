@@ -187,9 +187,9 @@ label {
 }
 
 .glow-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    /* position: absolute;
+    top: 1%;
+    left: 50%; */
     transform: translate(-50%, -50%);
     font-size: 30px;
     font-weight: bold;
@@ -232,3 +232,58 @@ label {
     font-weight: 300;
     font-size: 20px;
 }
+/* Navbar Styling */
+.navbar {
+  position: fixed; /* Fixed position to stick at the top */
+  top: 0;
+  width: 100%;
+  background-color: #fff; /* Adjust background color */
+  z-index: 1000; /* Ensure it's always on top */
+}
+
+/* Menu Bar Styling */
+.menu {
+  margin-top: 60px; /* Adjust the margin-top to create space below the navbar */
+  /* Add additional styles as needed */
+}
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+/* Menu Bar Styling */
+.menu {
+  margin-top: 60px; /* Adjust the margin-top to create space below the navbar */
+  background-color: #f0f0f0; /* Background color of the menu bar */
+  padding: 10px 0; /* Padding for menu items */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for the menu bar */
+}
+
+.menu ul {
+  list-style-type: none; /* Remove bullet points from list */
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Center-align menu items */
+}
+
+.menu ul li {
+  display: inline-block;
+  margin: 0 10px; /* Adjust spacing between menu items */
+}
+
+.menu ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Text color of menu items */
+  font-weight: bold;
+}
+
+.menu ul li a:hover {
+  color: #0069d9; /* Text color of menu items on hover */
+}
+
+/* Additional styling for other elements */
+/* Add your other CSS styles below */
