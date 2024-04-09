@@ -176,3 +176,13 @@
 {
   z-index: -1;
 }
+.mainContent-status {
+  margin-top: 20px;
+}
+
+.mainContent-status > div {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
