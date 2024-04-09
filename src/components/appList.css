@@ -2,8 +2,10 @@
     margin: 10px 0px 15px 0px;
     max-width: 100%;
     padding: 10px;
-    background-color: rgb(150, 139, 139);
+    background-color: #67C6E3;
     line-height: 23px;
+    border-radius: 9px;
+    box-shadow: 7px 8px 6px #190482;
 }
 .application-list{
     margin: 30px;
@@ -22,8 +24,12 @@
     font-size: 25px;
     background-color: rgba(255, 255, 255, 0);
     padding: 5px;
+   
+   
+
 }
 .appBtn{
-    
-    background-color: rgba(10, 45, 93, 0.731);
+     border-radius: 10px;
+
+    background-color: #DFF5FF
 }
