@@ -11,13 +11,14 @@ const ProfilePage = () => {
   const firebase = useFirebase();
   const [student, setStudent] = useState([]);
   const [user, setUser] = useState(null);
+  //adminUid=JpUlDd3JMLbbYTSvRp7UFxD81k33
 
 
   useEffect(() => {
     const auth = getAuth();
     if (auth.currentUser) {
       setUser(auth.currentUser);
-      //console.log(user.email);
+      //console.log(user.uid);
     } else {
       setUser(null);
     }

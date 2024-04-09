@@ -18,9 +18,10 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [role, setRole] = useState("student");
   const history = useHistory();
 
-  
+  const adminUid="JpUlDd3JMLbbYTSvRp7UFxD81k33";
   const handleLogin = async (e, type) => {
     e.preventDefault();
     setLoading(true);
@@ -61,7 +62,7 @@ const LoginPage = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          if (user.emailVerified) {
+          if (user.emailVerified && ((role==="admin"&&user.uid===adminUid) || (role==="student" && !user.uid===adminUid))) {
             console.log("Logged in successfully! Hello, ", email);
             history.push("/dashboard");
           } else {
@@ -82,10 +83,11 @@ const LoginPage = () => {
     setShowPassword(!showPassword);
   };
 
-  const [selectedOption, setSelectedOption] = useState("option1");
+
 
   const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
+    setRole(event.target.value);
+    console.log(role);
   };
 
   const handleForgotPassword = () => {
@@ -215,23 +217,23 @@ const LoginPage = () => {
                     id="radio1"
                     name="radioswitch"
                     value="student"
-                    checked={selectedOption === "student"}
+                    checked={role === "student"}
                     onChange={handleOptionChange}
                     className="radio-switch-input" 
                     
                   />
-                  <label htmlFor="radio1" className="radio-switch-label">Student</label>
+                  <label htmlFor="radio1" className="radio-switch-label">Admin</label>
 
                   <input
                     type="radio"
                     id="radio2"
                     name="radioswitch"
                     value="admin"
-                    checked={selectedOption === "admin"}
+                    checked={role === "admin"}
                     onChange={handleOptionChange}
                     className="radio-switch-input"
                   />
-                  <label htmlFor="radio2" className="radio-switch-label">Admin</label>
+                  <label htmlFor="radio2" className="radio-switch-label">Student</label>
                   <div className="slide-indicator"></div>
                 </div>
               </div>

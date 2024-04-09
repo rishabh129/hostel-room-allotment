@@ -36,25 +36,27 @@ const AdminDashboard = () => {
           Applications
         </button>
         {showPopup && (
-              <div className="popup">
-              <button className="close-button" onClick={togglePopup}>
-                X
-              </button>
-              <Link to="/applications?type=newroom">
-                <button className="admin-button">New Room Applications</button>
-              </Link>
-              <Link to="/applications?type=swaproom">
-                <button className="admin-button">Swap Room Applications</button>
-              </Link>
-              <Link to="/applications?type=vacateroom">
-                <button className="admin-button">Vacate Room Applications</button>
-              </Link>
-            </div>
+          <div className="popup">
+            <button className="close-button" onClick={togglePopup}>
+              X
+            </button>
+            <Link to="/applications?type=newroom">
+              <button className="admin-button">New Room Applications</button>
+            </Link>
+            <Link to="/applications?type=swaproom">
+              <button className="admin-button">Swap Room Applications</button>
+            </Link>
+            <Link to="/applications?type=vacateroom">
+              <button className="admin-button">Vacate Room Applications</button>
+            </Link>
+          </div>
         )}
         <br />
         <br />
         <h2>2.List of Rooms in hostel 5:-</h2>
-        <button className="big-button">List of Rooms</button>
+        <Link to="/rooms/list">
+          <button className="big-button">List of Rooms</button>
+        </Link>
       </div>
     </div>
   );
