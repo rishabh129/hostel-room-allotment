@@ -23,7 +23,7 @@ const ViewNewRoomForm = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar loggedIn={true}/>
   
       <div className="contain">
         <div className="scrollable-container">

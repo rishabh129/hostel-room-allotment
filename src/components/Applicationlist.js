@@ -34,7 +34,7 @@ const ApplicationListPage = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar loggedIn={true}/>
       <h2 className="appListHeading">{heading}</h2>
       <div className="application-list">
         {applications.map((application) => (
