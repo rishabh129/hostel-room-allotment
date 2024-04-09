@@ -32,16 +32,17 @@ const VacateRoomForm = () => {
     console.log(formData);
   };
 
-  const toggleDocumentUpload = (e) => {
-    const reason = e.target.value;
-    // Logic to toggle document upload based on reason
-  };
+  // const toggleDocumentUpload = (e) => {
+  //   //const reason = e.target.value;
+  //   // Logic to toggle document upload based on reason
+  // };
 
   return (
-    <div className="divider">
-      <Navbar></Navbar>
-      <Menubar/>
+   
       
+    <div className="divider">
+       <Navbar></Navbar>
+      <Menubar className='menu' />
   
       <span className="glow-text">Vacate-Room Application Form</span>
       <form action="#" method="POST" onSubmit={handleSubmit}>
@@ -100,26 +101,45 @@ const VacateRoomForm = () => {
 
         {/* Reason for Vacate */}
         <fieldset className="reason-section">
-          <legend>Reason for Vacate</legend>
-          <label className="radio">
-            <input type="radio" name="reason" value="Internship" onChange={toggleDocumentUpload} checked={formData.reason === 'Internship'} />
-            <span>Internship</span>
-          </label>
-          <label className="radio">
-            <input type="radio" name="reason" value="Medical" onChange={toggleDocumentUpload} checked={formData.reason === 'Medical'} />
-            <span>Medical Issue</span>
-          </label>
-          <label className="radio">
-            <input type="radio" name="reason" value="Personal" onChange={toggleDocumentUpload} checked={formData.reason === 'Personal'} />
-            <span>Personal</span>
-          </label>
-          <p className="note">Note: Students selecting "Personal" reason should take permission from the warden.</p>
-        </fieldset>
+  <legend>Reason for Vacate</legend>
+  <label className="radio">
+    <input 
+      type="radio" 
+      name="reason" 
+      value="Internship" 
+      onChange={handleChange} 
+      checked={formData.reason === 'Internship'} 
+    />
+    <span>Internship</span>
+  </label>
+  <label className="radio">
+    <input 
+      type="radio" 
+      name="reason" 
+      value="Medical" 
+      onChange={handleChange} 
+      checked={formData.reason === 'Medical'} 
+    />
+    <span>Medical Issue</span>
+  </label>
+  <label className="radio">
+    <input 
+      type="radio" 
+      name="reason" 
+      value="Personal" 
+      onChange={handleChange} 
+      checked={formData.reason === 'Personal'} 
+    />
+    <span>Personal</span>
+  </label>
+  <p className="note">Note: Students selecting "Personal" reason should take permission from the warden.</p>
+</fieldset>
+
 
         {/* Documents */}
         <fieldset className="documents-section" id="document-upload-section">
           <legend>Document upload</legend>
-          <label htmlFor="document-upload">Photo</label>
+          <label htmlFor="document-upload">Required Document</label>
           <input type="file" id="document-upload" name="document-upload" multiple /><br />
         </fieldset>
 
