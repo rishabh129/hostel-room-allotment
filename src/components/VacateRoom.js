@@ -44,7 +44,7 @@ const VacateRoomForm = () => {
        <Navbar></Navbar>
       <Menubar className='menu' />
   
-      <span className="glow-text">Vacate-Room Application Form</span>
+      {/* <span className="glow-text">Vacate-Room Application Form</span> */}
       <form action="#" method="POST" onSubmit={handleSubmit}>
         {/* Personal Information */}
         <fieldset className="personal-info-section">
