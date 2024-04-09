@@ -152,6 +152,47 @@
     }
 }
 
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(46, 85, 226, 0.467); /* Adjust transparency here */
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Adjust border radius here */
+  padding: 20px;
+  z-index: 9999;
+  top: 70%;
+}
 
-/* For WebKit browsers (such as Chrome, Safari) */
+.popup button.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
 
+.popup button.close-button:hover {
+  color: #ff0000; /* Change color on hover if desired */
+}
+
+.popup button.admin-button {
+  display: block;
+  margin-top: 10px; /* Adjust spacing */
+  padding: 10px 20px;
+  background-color: #378ce7;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.popup button.admin-button:hover {
+  background-color: #0056b3;
+}

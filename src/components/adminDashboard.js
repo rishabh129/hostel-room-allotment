@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./admin.css";
 
 const AdminDashboard = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
     <div className="admin-main">
       <Navbar></Navbar>
@@ -26,7 +32,19 @@ const AdminDashboard = () => {
       </div>
       <div className="admin-work">
         <h2> 1. List of Student application:-</h2>
-        <button className="big-button"><Link to="/applications">Application List</Link></button>
+        <button className="big-button" onClick={togglePopup}>
+          Applications
+        </button>
+        {showPopup && (
+          <div className="popup">
+            <button className="close-button" onClick={togglePopup}>
+              X
+            </button>
+            <button className="admin-button">New rooms</button>
+            <button className="admin-button">Swap rooms</button>
+            <button className="admin-button">Vacate room</button>
+          </div>
+        )}
         <br />
         <br />
         <h2>2.List of Rooms in hostel 5:-</h2>
