@@ -18,6 +18,7 @@ const ProfilePage = () => {
     const auth = getAuth();
     if (auth.currentUser) {
       setUser(auth.currentUser);
+      
       //console.log(user.uid);
     } else {
       setUser(null);

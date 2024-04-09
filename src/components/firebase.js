@@ -147,6 +147,21 @@ export const FirebaseProvider = (props) => {
     }
   };
 
+  const fetchRooms = async () => {
+    try {
+      const documentsRef = collection(firestore, "h1");
+      const snapshot = await getDocs(documentsRef);
+      const documents = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      return documents;
+    } catch (error) {
+      console.error(`Error fetching documents from collection :`, error);
+      return []; // Return an empty array or handle the error as needed
+    }
+  };
+
   return (
     <FirebaseContext.Provider
       value={{
@@ -156,6 +171,7 @@ export const FirebaseProvider = (props) => {
         getDefaultProfileImage,
         fetchApplications,
         getApplication,
+        fetchRooms,
       }}
     >
       {props.children}
