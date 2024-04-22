@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useFirebase } from "./firebase";
 import "./formStyle.css";
-import { useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./formStyle.css";
 
@@ -10,21 +10,66 @@ const ViewNewRoomForm = () => {
   const [studentData, setStudentData] = useState([]);
   const location = useLocation();
   const roll = new URLSearchParams(location.search).get("roll");
-
+  let [sId, setSId] = useState("");
 
   useEffect(() => {
-    
-      firebase.getApplication(roll, "newroom").then((studentData) => {
-        setStudentData(studentData.docs[0].data());
-        
-      });
-    
+
+    firebase.getApplication(roll, "newroom").then((studentData) => {
+      // setSId(studentData.docs[0].id);
+      setStudentData(studentData.docs[0].data());
+    });
+
   }, [roll, firebase]);
+
+  const allotRoom = async () => {
+    try {
+
+      const studentProfileSnapshot = await firebase.getStudentProfileData(studentData?.contactEmail);
+      setSId(studentProfileSnapshot.docs[0].id);
+      console.log('studentId: ', sId);
+      
+       
+
+      firebase.checkRoom("hostel").then((roomsData) => {
+        if (roomsData.docs.length > 0) {
+          const roomsSnapshot = roomsData.docs[0];
+          console.log(roomsSnapshot.id);
+          const hostelData = {
+            Allotted: 1,
+            studentId: studentData.studentId
+          }
+          const studentRoomData = {
+            hostel: "5",
+            room: roomsSnapshot.id
+          }
+          firebase.updateRoom("hostel", roomsSnapshot.id, hostelData);
+          firebase.updateStudent(sId, studentRoomData);
+
+          // firebase.firestore().collection('hostel').doc(roomToAllot.id).update({
+          //   Allotted: 1,
+          //   Email: studentData?.studentId // Replace with the admin's email ID
+          // });
+          // firebase.firestore().collection('student').where('studentId', '==', studentData.studentId).update({
+          //   Allotted: 1,
+          //   Email: studentData?.studentId // Replace with the admin's email ID
+          // });
+          alert('Room allotted successfully!');
+        } else {
+          alert('No available rooms to allot.');
+        }
+      });
+    } catch (error) {
+      console.error('Error allotting room:', error);
+      alert('Failed to allot room. Please try again later.');
+    }
+  };
+
+
 
   return (
     <>
-      <Navbar loggedIn={true}/>
-  
+      <Navbar loggedIn={true} />
+
       <div className="contain">
         <div className="scrollable-container">
           <div className="scrollable-content">
@@ -34,7 +79,7 @@ const ViewNewRoomForm = () => {
                 <label htmlFor="first-name" id="first-namel">
                   First Name: {studentData?.firstName}
                 </label>
-                
+
                 <label htmlFor="middle-name" id="middle-namel">
                   Middle Name:{studentData?.middleName}
                 </label>
@@ -59,7 +104,7 @@ const ViewNewRoomForm = () => {
                 <label htmlFor="dob" id="dobl">
                   Date of Birth: {studentData?.dob}
                 </label>
-                
+
               </fieldset>
               {/* academic section */}
               <fieldset className="academic-info-section">
@@ -98,9 +143,9 @@ const ViewNewRoomForm = () => {
                 <label htmlFor="current-address" id="current-addressl">
                   Current Address: {studentData?.currentAddress}
                 </label>
-                
+
               </fieldset>
-              <button className="button-22" type="submit">
+              <button onClick={allotRoom} className="button-22" type="button">
                 Approve
               </button>
             </form>
@@ -109,7 +154,7 @@ const ViewNewRoomForm = () => {
       </div>
     </>
   );
-  
+
 };
 
 export default ViewNewRoomForm;

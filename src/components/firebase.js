@@ -9,7 +9,7 @@ import {
   addDoc,
   getDocs,
   query,
-  where,
+  where, updateDoc, doc 
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -119,9 +119,34 @@ export const FirebaseProvider = (props) => {
     const q = query(collectionRef, where("studentId", "==", studentId));
 
     const result = await getDocs(q);
-    console.log(result);
+    //console.log(result);
     return result;
   };
+
+  const checkRoom = async (type) => {
+    const collectionRef = collection(firestore, type);
+    const q = query(collectionRef, where("Allotted", "==", 0));
+
+    const result = await getDocs(q);
+    //console.log(result);
+    return result;
+  };
+
+  const updateRoom = async (type, id, newData) => {
+    const docRef = doc(getFirestore(), type, id);
+    await updateDoc(docRef, newData);
+    console.log("Document updated successfully!");
+  };
+
+  const updateStudent = async ( id, newData) => {
+    const docRef = doc(getFirestore(), "student", id);
+    await updateDoc(docRef, newData);
+    console.log("Document updated successfully!");
+  };
+  
+  
+
+
 
   const getProfileImage = (path) =>{
     console.log(path);
@@ -172,6 +197,9 @@ export const FirebaseProvider = (props) => {
         fetchApplications,
         getApplication,
         fetchRooms,
+        checkRoom,
+        updateRoom,
+        updateStudent,
       }}
     >
       {props.children}
