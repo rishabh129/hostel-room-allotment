@@ -52,7 +52,7 @@ ion-icon{
     left: 0;
     right: 0;
     bottom: 0;
-    /* background: url("../../public/images/banner.png"); */
+    background: url("../../public/images/banner.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,31 +60,6 @@ ion-icon{
     z-index: -1;
     animation: slideshow 10s infinite ease-in-out;
 }
-
-/* body{
-    animation: slideshow 10s infinite ease-in-out;
-    background-size: cover;
-} */
-
-@keyframes slideshow {
-  0% {
-    background-image: url('../images/bg1.jpg'); /* Change the image path accordingly */
-  }
-  25% {
-    background-image: url('../images/bg2.jpg'); /* Change the image path accordingly */
-  }
-  50% {
-    background-image: url('../images/bg3.jpg'); /* Change the image path accordingly */
-  }
-  75% {
-    background-image: url('../images/bg4.jpg'); /* Change the image path accordingly */
-  }
-  100% {
-    background-image: url('../images/bg5.jpg'); /* Change the image path accordingly */
-  }
-}
-
-
 
 .login_form_wrapper {
     z-index: 999;

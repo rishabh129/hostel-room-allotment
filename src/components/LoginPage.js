@@ -21,31 +21,28 @@ const LoginPage = () => {
   const [role, setRole] = useState("student");
   const history = useHistory();
 
-  const adminUid="JpUlDd3JMLbbYTSvRp7UFxD81k33";
+  const adminUid = "JpUlDd3JMLbbYTSvRp7UFxD81k33";
+
   const handleLogin = async (e, type) => {
     e.preventDefault();
     setLoading(true);
     const email = e.target.email.value;
     const password = e.target.password.value;
     const auth = getAuth();
+
     if (type === "signup") {
-      
       await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // const user = userCredential.user;
-        
-        // Send email verification
-        sendEmailVerification(auth.currentUser)
-        .then(() => {
-          alert("Verification email sent!");
-          setLogin(true);
-        })
-        .catch((error) => {
-          console.error("Error sending verification email:", error);
-        });
-        
-        console.log("Account Created! Welcome, ", email);
-          // history.push("/dashboard");
+        .then((userCredential) => {
+          sendEmailVerification(auth.currentUser)
+            .then(() => {
+              alert("Verification email sent!");
+              setLogin(true);
+            })
+            .catch((error) => {
+              console.error("Error sending verification email:", error);
+            });
+
+          console.log("Account Created! Welcome, ", email);
           setLoading(false);
         })
         .catch((err) => {
@@ -54,28 +51,24 @@ const LoginPage = () => {
           setLogin(true);
         });
 
-        await updateProfile(auth.currentUser, {
-          displayName: name
-        });
-
+      await updateProfile(auth.currentUser, {
+        displayName: name,
+      });
     } else {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
           if (user.emailVerified) {
-            if(role==="admin"&&user.uid===adminUid){
+            if (role === "admin" && user.uid === adminUid) {
               console.log("Logged in successfully! Hello, ", email);
-            history.push("/admin");
-            }
-            else if(role==="student" && !(user.uid===adminUid)){
+              history.push("/admin");
+            } else if (role === "student" && user.uid !== adminUid) {
               console.log("Logged in successfully! Hello, ", email);
-            history.push("/dashboard");
-            }
-            else{
+              history.push("/dashboard");
+            } else {
               setLoading(false);
-            alert("Please select correct role!");
+              alert("Please select correct role!");
             }
-            
           } else {
             setLoading(false);
             alert("Please verify your email to log in.");
@@ -94,8 +87,6 @@ const LoginPage = () => {
     setShowPassword(!showPassword);
   };
 
-
-
   const handleOptionChange = (event) => {
     setRole(event.target.value);
     console.log(role);
@@ -103,8 +94,8 @@ const LoginPage = () => {
 
   const handleForgotPassword = () => {
     setLoading(true);
-    const auth = getAuth(); // Get the authentication instance
-    const emailAddress = email; // Get the user's email address from the input
+    const auth = getAuth();
+    const emailAddress = email;
     sendPasswordResetEmail(auth, emailAddress)
       .then(() => {
         setLoading(false);
@@ -119,7 +110,7 @@ const LoginPage = () => {
     <main className="background_wrapper">
       <Navbar loggedIn={false} />
 
-      <Loader loading = {loading}/>
+      <Loader loading={loading} />
       <div className="login_form_wrapper">
         <form
           onSubmit={(e) => handleLogin(e, login ? "signin" : "signup")}
@@ -167,8 +158,6 @@ const LoginPage = () => {
                     type="text"
                     placeholder="Roll Number"
                     className="login__input roll--input"
-                    // value={name}
-                    // onChange={(e) => setEmail(e.target.value)}
                     required
                   />
                 </div>
@@ -230,10 +219,11 @@ const LoginPage = () => {
                     value="student"
                     checked={role === "student"}
                     onChange={handleOptionChange}
-                    className="radio-switch-input" 
-                    
+                    className="radio-switch-input"
                   />
-                  <label htmlFor="radio1" className="radio-switch-label">Student</label>
+                  <label htmlFor="radio1" className="radio-switch-label">
+                    Student
+                  </label>
 
                   <input
                     type="radio"
@@ -244,7 +234,9 @@ const LoginPage = () => {
                     onChange={handleOptionChange}
                     className="radio-switch-input"
                   />
-                  <label htmlFor="radio2" className="radio-switch-label">Admin</label>
+                  <label htmlFor="radio2" className="radio-switch-label">
+                    Admin
+                  </label>
                   <div className="slide-indicator"></div>
                 </div>
               </div>
@@ -253,10 +245,13 @@ const LoginPage = () => {
             <button className="button__login">
               {login ? "Sign-In" : "Sign-Up"}
             </button>
-            {login?
-            <Link to="#" onClick={handleForgotPassword} className="forgotPW">Forgot Password?</Link>
-            :""}
-            
+            {login ? (
+              <Link to="#" onClick={handleForgotPassword} className="forgotPW">
+                Forgot Password?
+              </Link>
+            ) : (
+              ""
+            )}
           </div>
         </form>
       </div>
